@@ -15,9 +15,9 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Vem Viver — Brand Lab",
+  title: "Vem Viver — Sucos integrais",
   description:
-    "Fundação visual e digital da Vem Viver, sucos integrais escolhidos com critério.",
+    "Sucos integrais Vem Viver: boas escolhas para a mesa, a rotina e os bons momentos.",
 };
 
 export default function RootLayout({
