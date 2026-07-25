@@ -14,6 +14,15 @@ const principles = [
   ["03", "Feita para permanecer", "Um sistema contemporâneo, sem depender de modismos ou excessos."],
 ];
 
+const colorTokens = [
+  { name: "Marfim", value: "#F6F0E5", token: "cream-100" },
+  { name: "Verde profundo", value: "#17372A", token: "forest-900" },
+  { name: "Uva tinto", value: "#541D33", token: "wine" },
+  { name: "Uva branco", value: "#B89C4A", token: "white-grape" },
+  { name: "Uva rosé", value: "#B7737D", token: "rose" },
+  { name: "Laranja", value: "#CA7B2D", token: "orange" },
+] as const;
+
 export default function Home() {
   return (
     <main>
@@ -93,6 +102,35 @@ export default function Home() {
               Simples sem ser comum. Elegante sem parecer distante. Clara em todos os
               pontos de contato.
             </p>
+          </div>
+        </div>
+
+        <div className="tokens" aria-label="Tokens fundamentais do design system">
+          <div className="tokens__heading">
+            <div>
+              <p className="section-index">Fundamentos</p>
+              <h3>Paleta de marca</h3>
+            </div>
+            <p>
+              O marfim e o verde sustentam a marca. As cores dos sabores orientam a
+              escolha sem competir com a assinatura Vem Viver.
+            </p>
+          </div>
+          <div className="tokens__grid">
+            {colorTokens.map((color) => (
+              <article className="color-token" key={color.token}>
+                <div
+                  className="color-token__swatch"
+                  style={{ backgroundColor: color.value }}
+                  aria-hidden="true"
+                />
+                <div>
+                  <h4>{color.name}</h4>
+                  <p>{color.value}</p>
+                  <code>--{color.token}</code>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
