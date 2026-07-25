@@ -1,0 +1,633 @@
+:root {
+  --cream-50: #fffdf8;
+  --cream-100: #f6f0e5;
+  --cream-200: #eadfcd;
+  --forest-900: #17372a;
+  --forest-800: #214936;
+  --olive-700: #555c2e;
+  --olive-500: #7e8749;
+  --ink: #20271f;
+  --muted: #6f6c61;
+  --wine: #541d33;
+  --grape: #2f203b;
+  --gold: #b69156;
+  --rose: #b7737d;
+  --orange: #ca7b2d;
+  --line: rgba(32, 39, 31, 0.16);
+  --font-display: Georgia, serif;
+  --font-sans: Arial, sans-serif;
+  --page: min(100% - 48px, 1380px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream-100);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  width: var(--page);
+  height: 96px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__brand {
+  width: 154px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-logo--light {
+  filter: brightness(0) invert(1);
+}
+
+.site-header__nav {
+  display: flex;
+  gap: 34px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-header__nav a {
+  transition: color 180ms ease;
+}
+
+.site-header__nav a:hover {
+  color: var(--olive-500);
+}
+
+.site-header__tag {
+  justify-self: end;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero {
+  width: var(--page);
+  min-height: calc(100svh - 96px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: 4vw;
+  padding: 80px 0;
+}
+
+.eyebrow,
+.section-index,
+.type-specimen__label {
+  color: var(--olive-700);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  margin: 0 14px 3px 0;
+  background: currentColor;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+blockquote,
+.manifesto__intro,
+.type-specimen__display {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+h1 {
+  max-width: 690px;
+  margin: 30px 0;
+  font-size: clamp(64px, 7.3vw, 120px);
+  line-height: 0.86;
+}
+
+h1 em {
+  display: block;
+  color: var(--olive-700);
+  font-weight: 500;
+}
+
+.hero__lead {
+  max-width: 550px;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.7;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__visual {
+  min-height: 680px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  border-radius: 50% 50% 3px 3px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.24), transparent 55%),
+    var(--cream-200);
+}
+
+.hero__halo {
+  position: absolute;
+  top: 72px;
+  left: 50%;
+  width: 390px;
+  height: 390px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(84, 29, 51, 0.16);
+  border-radius: 50%;
+}
+
+.bottle {
+  --juice: var(--wine);
+  position: relative;
+  z-index: 2;
+  width: 27%;
+  max-width: 180px;
+  min-width: 118px;
+}
+
+.bottle:nth-of-type(3) {
+  transform: translateY(-44px);
+}
+
+.bottle--branco { --juice: #a78f3e; }
+.bottle--rose { --juice: #93535f; }
+.bottle--laranja { --juice: var(--orange); }
+
+.bottle__neck {
+  width: 42%;
+  height: 82px;
+  margin: 0 auto -12px;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 16px 16px 5px 5px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 4px, rgba(255,255,255,.17) 4px 5px),
+    var(--juice);
+}
+
+.bottle__glass {
+  height: 470px;
+  padding: 105px 8px 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 42px 42px 18px 18px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.19), transparent 18%, transparent 75%, rgba(0,0,0,.14)),
+    var(--juice);
+  box-shadow: 0 32px 50px rgba(48, 35, 25, 0.18);
+}
+
+.bottle__label {
+  min-height: 180px;
+  padding: 25px 11px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--forest-900);
+  background: var(--cream-50);
+}
+
+.bottle__brand {
+  font-family: var(--font-display), serif;
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+}
+
+.bottle__flavor {
+  margin-top: 22px;
+  font-family: var(--font-display), serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bottle__type,
+.bottle__volume {
+  margin-top: 4px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bottle__volume {
+  margin-top: 16px;
+}
+
+.manifesto {
+  padding: 150px max(24px, calc((100vw - 1380px) / 2));
+  display: grid;
+  grid-template-columns: 0.32fr 1fr;
+  gap: 40px;
+  color: var(--cream-50);
+  background: var(--forest-900);
+}
+
+.manifesto .section-index {
+  color: var(--gold);
+}
+
+.manifesto__intro {
+  margin-bottom: 20px;
+  color: rgba(255, 253, 248, 0.58);
+  font-size: clamp(23px, 2.7vw, 40px);
+}
+
+.manifesto h2,
+.system h2,
+.lineup h2 {
+  margin: 0;
+  font-size: clamp(56px, 7vw, 108px);
+  line-height: 0.95;
+}
+
+.manifesto h2 {
+  max-width: 1000px;
+}
+
+.manifesto__grid {
+  max-width: 900px;
+  margin-top: 76px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.system,
+.lineup {
+  width: var(--page);
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.system__heading {
+  max-width: 980px;
+}
+
+.system__heading h2 {
+  margin-top: 24px;
+  color: var(--forest-900);
+}
+
+.principles {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.principle {
+  min-height: 280px;
+  padding: 26px 36px 34px 0;
+  border-right: 1px solid var(--line);
+}
+
+.principle + .principle {
+  padding-left: 36px;
+}
+
+.principle:last-child {
+  border-right: 0;
+}
+
+.principle > span {
+  color: var(--olive-700);
+  font-size: 12px;
+}
+
+.principle h3,
+.flavor-card h3 {
+  margin: 65px 0 15px;
+  color: var(--forest-900);
+  font-family: var(--font-display), serif;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.principle p {
+  max-width: 330px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.type-specimen {
+  margin-top: 80px;
+  padding: 70px;
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 70px;
+  color: var(--cream-50);
+  background: var(--grape);
+}
+
+.type-specimen__label {
+  color: var(--rose);
+}
+
+.type-specimen__display {
+  max-width: 780px;
+  margin: 28px 0 0;
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 0.95;
+}
+
+.type-specimen__body {
+  margin: 30px 0 0;
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.lineup {
+  border-top: 1px solid var(--line);
+}
+
+.lineup__heading {
+  display: grid;
+  grid-template-columns: 1fr 0.48fr;
+  align-items: end;
+  gap: 70px;
+}
+
+.lineup__heading h2 {
+  margin-top: 24px;
+  color: var(--forest-900);
+}
+
+.lineup__heading > p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.flavor-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.flavor-card {
+  --flavor: var(--wine);
+  min-height: 430px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  background: var(--cream-50);
+}
+
+.flavor-card--branco { --flavor: #b89c4a; }
+.flavor-card--rose { --flavor: var(--rose); }
+.flavor-card--laranja { --flavor: var(--orange); }
+
+.flavor-card__number {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.flavor-card__swatch {
+  width: 128px;
+  height: 128px;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--flavor);
+  box-shadow: 0 20px 55px color-mix(in srgb, var(--flavor), transparent 70%);
+}
+
+.flavor-card h3 {
+  margin: 0 0 8px;
+}
+
+.flavor-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.closing {
+  min-height: 92svh;
+  padding: 120px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--cream-50);
+  background: var(--forest-900);
+}
+
+.closing .section-index {
+  color: var(--gold);
+}
+
+.closing blockquote {
+  max-width: 1100px;
+  margin: 55px auto 80px;
+  font-size: clamp(64px, 9vw, 136px);
+  line-height: 0.9;
+}
+
+.closing .brand-logo {
+  width: 210px;
+  opacity: 0.8;
+}
+
+.closing__note {
+  margin: 34px 0 0;
+  color: rgba(255, 253, 248, 0.45);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page: min(100% - 32px, 1380px);
+  }
+
+  .site-header {
+    height: 78px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 72px 0 24px;
+  }
+
+  .hero__visual {
+    min-height: 540px;
+  }
+
+  .bottle__glass {
+    height: 370px;
+    padding-top: 72px;
+  }
+
+  .manifesto {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .manifesto__grid,
+  .type-specimen,
+  .lineup__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .principles,
+  .flavor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .principle:nth-child(2) {
+    border-right: 0;
+  }
+
+  .principle:nth-child(3) {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header__tag {
+    display: none;
+  }
+
+  h1 {
+    font-size: 62px;
+  }
+
+  .hero__visual {
+    min-height: 440px;
+  }
+
+  .hero__halo {
+    width: 260px;
+    height: 260px;
+  }
+
+  .bottle {
+    min-width: 92px;
+  }
+
+  .bottle__neck {
+    height: 58px;
+  }
+
+  .bottle__glass {
+    height: 300px;
+    padding-top: 54px;
+  }
+
+  .bottle__label {
+    min-height: 142px;
+    padding: 18px 5px 8px;
+  }
+
+  .bottle__flavor {
+    margin-top: 15px;
+    font-size: 11px;
+  }
+
+  .manifesto__grid,
+  .principles,
+  .flavor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .system,
+  .lineup {
+    padding: 100px 0;
+  }
+
+  .principle,
+  .principle + .principle {
+    padding: 26px 0 34px;
+    border-right: 0;
+  }
+
+  .type-specimen {
+    padding: 42px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
