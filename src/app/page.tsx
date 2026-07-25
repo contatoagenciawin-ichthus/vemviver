@@ -1,172 +1,154 @@
+import Link from "next/link";
 import { Bottle } from "@/components/bottle";
 import { BrandLogo } from "@/components/brand-logo";
 
-const flavors = [
-  { id: "tinto", name: "Uva Tinto", note: "Profundo e encorpado" },
-  { id: "branco", name: "Uva Branco", note: "Leve e luminoso" },
-  { id: "rose", name: "Uva Rosé", note: "Delicado e acolhedor" },
-  { id: "laranja", name: "Laranja", note: "Familiar e vibrante" },
-] as const;
-
-const principles = [
-  ["01", "Marca antes do sabor", "Primeiro reconhecemos Vem Viver. Depois, navegamos pela linha."],
-  ["02", "Clareza comunica qualidade", "Hierarquia, respiro e boa leitura tornam a escolha mais simples."],
-  ["03", "Feita para permanecer", "Um sistema contemporâneo, sem depender de modismos ou excessos."],
-];
-
-const colorTokens = [
-  { name: "Marfim", value: "#F6F0E5", token: "cream-100" },
-  { name: "Verde profundo", value: "#17372A", token: "forest-900" },
-  { name: "Uva tinto", value: "#541D33", token: "wine" },
-  { name: "Uva branco", value: "#B89C4A", token: "white-grape" },
-  { name: "Uva rosé", value: "#B7737D", token: "rose" },
-  { name: "Laranja", value: "#CA7B2D", token: "orange" },
+const products = [
+  { tone: "tinto", name: "Uva Tinto", note: "Profundo e encorpado" },
+  { tone: "branco", name: "Uva Branco", note: "Leve e luminoso" },
+  { tone: "rose", name: "Uva Rosé", note: "Delicado e acolhedor" },
+  { tone: "laranja", name: "Laranja", note: "Familiar e vibrante" },
 ] as const;
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header">
-        <a className="site-header__brand" href="#inicio" aria-label="Vem Viver — início">
+    <main className="public-site">
+      <header className="public-header">
+        <Link className="public-header__brand" href="/" aria-label="Vem Viver — início">
           <BrandLogo priority />
-        </a>
-        <nav className="site-header__nav" aria-label="Navegação principal">
-          <a href="#essencia">Essência</a>
-          <a href="#sistema">Sistema</a>
-          <a href="#linha">Linha inicial</a>
+        </Link>
+        <nav className="public-header__nav" aria-label="Navegação principal">
+          <a href="#produtos">Produtos</a>
+          <a href="#historia">Nossa história</a>
+          <a href="#comercial">Para revendedores</a>
         </nav>
-        <span className="site-header__tag">Brand Lab · 01</span>
+        <a className="button button--small" href="#contato">Fale conosco</a>
       </header>
 
-      <section className="hero" id="inicio">
-        <div className="hero__copy">
+      <section className="public-hero">
+        <div className="public-hero__copy">
           <p className="eyebrow">Sucos integrais · Desde 1992</p>
-          <h1>O prazer de servir <em>boas escolhas.</em></h1>
-          <p className="hero__lead">
-            Uma marca construída com critério para ocupar a mesa, a rotina e os bons
-            momentos da vida.
+          <h1>Boas escolhas merecem ser <em>servidas.</em></h1>
+          <p>
+            Sucos integrais feitos para ocupar a mesa, acompanhar a rotina e tornar
+            os bons momentos ainda mais especiais.
           </p>
-          <a className="text-link" href="#essencia">
-            Conheça a nossa essência <span aria-hidden="true">↓</span>
-          </a>
+          <div className="public-hero__actions">
+            <a className="button" href="#produtos">Conheça os sabores</a>
+            <a className="text-link" href="#historia">Conheça a Vem Viver</a>
+          </div>
         </div>
 
-        <div className="hero__visual" aria-label="Linha inicial Vem Viver">
-          <div className="hero__halo" />
+        <div className="public-hero__visual" aria-label="Sucos integrais Vem Viver">
+          <span className="public-hero__stamp">100% integral</span>
+          <div className="public-hero__halo" />
           <Bottle tone="tinto" label="Uva Tinto" />
           <Bottle tone="branco" label="Uva Branco" />
           <Bottle tone="rose" label="Uva Rosé" />
         </div>
       </section>
 
-      <section className="manifesto" id="essencia">
-        <p className="section-index">01 · Essência</p>
-        <div className="manifesto__content">
-          <p className="manifesto__intro">A qualidade não precisa ser anunciada o tempo todo.</p>
-          <h2>Ela deve ser percebida em cada escolha.</h2>
-          <div className="manifesto__grid">
-            <p>
-              A Vem Viver dá continuidade a uma história iniciada em Americana, em 1992.
-              O nome permanece. O cuidado também.
-            </p>
-            <p>
-              Agora, esse compromisso chega por meio de sucos integrais de alta qualidade:
-              produtos que temos prazer em escolher, levar para casa e servir.
-            </p>
-          </div>
-        </div>
+      <section className="public-promise" aria-label="Proposta da marca">
+        <p>Qualidade que se percebe</p>
+        <span />
+        <p>Sabor para compartilhar</p>
+        <span />
+        <p>Escolhas feitas com critério</p>
       </section>
 
-      <section className="system" id="sistema">
-        <div className="system__heading">
-          <p className="section-index">02 · Sistema</p>
-          <h2>Uma linguagem segura, próxima e criteriosa.</h2>
-        </div>
-        <div className="principles">
-          {principles.map(([number, title, copy]) => (
-            <article className="principle" key={number}>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </article>
-          ))}
-        </div>
-        <div className="type-specimen">
+      <section className="products-section" id="produtos">
+        <div className="public-section-heading">
           <div>
-            <span className="type-specimen__label">Voz principal · Display</span>
-            <p className="type-specimen__display">Escolhas que merecem ser servidas.</p>
-          </div>
-          <div>
-            <span className="type-specimen__label">Voz de apoio · Sans</span>
-            <p className="type-specimen__body">
-              Simples sem ser comum. Elegante sem parecer distante. Clara em todos os
-              pontos de contato.
-            </p>
-          </div>
-        </div>
-
-        <div className="tokens" aria-label="Tokens fundamentais do design system">
-          <div className="tokens__heading">
-            <div>
-              <p className="section-index">Fundamentos</p>
-              <h3>Paleta de marca</h3>
-            </div>
-            <p>
-              O marfim e o verde sustentam a marca. As cores dos sabores orientam a
-              escolha sem competir com a assinatura Vem Viver.
-            </p>
-          </div>
-          <div className="tokens__grid">
-            {colorTokens.map((color) => (
-              <article className="color-token" key={color.token}>
-                <div
-                  className="color-token__swatch"
-                  style={{ backgroundColor: color.value }}
-                  aria-hidden="true"
-                />
-                <div>
-                  <h4>{color.name}</h4>
-                  <p>{color.value}</p>
-                  <code>--{color.token}</code>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="lineup" id="linha">
-        <div className="lineup__heading">
-          <div>
-            <p className="section-index">03 · Linha inicial</p>
-            <h2>Quatro sabores.<br />Uma só assinatura.</h2>
+            <p className="section-index">Nossa linha</p>
+            <h2>Um sabor para cada <em>momento.</em></h2>
           </div>
           <p>
-            A cor orienta a escolha sem fragmentar a marca. A estrutura permanece; muda
-            apenas o necessário para reconhecer cada produto.
+            Uma linha criada para quem valoriza bons produtos e o prazer simples
+            de servir algo escolhido com cuidado.
           </p>
         </div>
 
-        <div className="flavor-grid">
-          {flavors.map((flavor, index) => (
-            <article className={`flavor-card flavor-card--${flavor.id}`} key={flavor.id}>
-              <span className="flavor-card__number">0{index + 1}</span>
-              <div className="flavor-card__swatch" />
-              <div>
-                <h3>{flavor.name}</h3>
-                <p>{flavor.note}</p>
+        <div className="product-showcase">
+          {products.map((product, index) => (
+            <article className={`product-tile product-tile--${product.tone}`} key={product.tone}>
+              <span className="product-tile__number">0{index + 1}</span>
+              <div className="product-tile__bottle">
+                <Bottle tone={product.tone} label={product.name} />
+              </div>
+              <div className="product-tile__copy">
+                <h3>{product.name}</h3>
+                <p>{product.note}</p>
+                <span>Conhecer o produto →</span>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="closing">
-        <p className="section-index">Princípio central</p>
-        <blockquote>“O suco que temos prazer em servir.”</blockquote>
-        <BrandLogo light />
-        <p className="closing__note">Fundação digital · versão 01</p>
+      <section className="story-section" id="historia">
+        <div className="story-section__year" aria-hidden="true">1992</div>
+        <div className="story-section__copy">
+          <p className="section-index">Nossa história</p>
+          <h2>Uma história que continua em cada escolha.</h2>
+          <p>
+            A Vem Viver nasceu em Americana, em 1992. Hoje, o nome que atravessou
+            gerações ganha um novo capítulo por meio de sucos integrais de alta
+            qualidade, mantendo aquilo que sempre importou: cuidado, confiança e
+            prazer em servir.
+          </p>
+          <span className="story-section__signature">O nome permanece. O cuidado também.</span>
+        </div>
       </section>
+
+      <section className="occasion-section">
+        <div className="occasion-section__frame">
+          <span>Da rotina aos encontros</span>
+          <strong>Vem para a mesa.<br />Vem para a vida.</strong>
+        </div>
+        <div className="occasion-section__copy">
+          <p className="section-index">Feito para compartilhar</p>
+          <h2>O suco que temos prazer em servir.</h2>
+          <p>
+            No café da manhã, no almoço em família ou em uma pausa no meio do dia:
+            Vem Viver combina qualidade, sabor e presença para acompanhar momentos reais.
+          </p>
+        </div>
+      </section>
+
+      <section className="trade-section" id="comercial">
+        <div>
+          <p className="section-index">Revenda e distribuição</p>
+          <h2>Leve Vem Viver para mais mesas.</h2>
+        </div>
+        <div>
+          <p>
+            Quer oferecer a linha Vem Viver em seu mercado, empório, restaurante ou
+            canal de distribuição? Converse com nossa equipe comercial.
+          </p>
+          <a className="button button--light" href="#contato">Quero ser parceiro</a>
+        </div>
+      </section>
+
+      <footer className="public-footer" id="contato">
+        <div className="public-footer__brand">
+          <BrandLogo light />
+          <p>Sucos integrais para boas escolhas e bons momentos.</p>
+        </div>
+        <div>
+          <span>Navegue</span>
+          <a href="#produtos">Produtos</a>
+          <a href="#historia">Nossa história</a>
+          <a href="#comercial">Seja um parceiro</a>
+        </div>
+        <div>
+          <span>Contato</span>
+          <p>Canal comercial em implantação</p>
+          <p>Americana · São Paulo</p>
+        </div>
+        <div className="public-footer__bottom">
+          <p>© 2026 Vem Viver</p>
+          <Link href="/brand-lab">Brand Lab</Link>
+        </div>
+      </footer>
     </main>
   );
 }
