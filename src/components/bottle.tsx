@@ -3,11 +3,16 @@ import { BrandLogo } from "@/components/brand-logo";
 type BottleProps = {
   tone: "tinto" | "branco" | "rose" | "laranja";
   label: string;
+  volume?: "1 L" | "1,5 L";
+  size?: "1l" | "1-5l";
 };
 
-export function Bottle({ tone, label }: BottleProps) {
+export function Bottle({ tone, label, volume = "1 L", size = "1l" }: BottleProps) {
   return (
-    <div className={`bottle bottle--${tone}`} aria-label={`Suco de ${label}`}>
+    <div
+      className={`bottle bottle--${tone} bottle--${size}`}
+      aria-label={`Suco de ${label}, embalagem de ${volume}`}
+    >
       <div className="bottle__neck" />
       <div className="bottle__glass">
         <div className="bottle__label">
@@ -16,7 +21,7 @@ export function Bottle({ tone, label }: BottleProps) {
           </span>
           <span className="bottle__flavor">{label}</span>
           <span className="bottle__type">Suco 100% integral</span>
-          <span className="bottle__volume">1 L</span>
+          <span className="bottle__volume">{volume}</span>
         </div>
       </div>
     </div>
