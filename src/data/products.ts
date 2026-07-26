@@ -10,6 +10,18 @@ export const products = [
     experience:
       "Uma escolha de presença mais intensa para refeições, encontros e ocasiões em que o suco também faz parte da experiência à mesa.",
     occasions: ["Refeições em família", "Encontros e celebrações", "Momentos à mesa"],
+    seal: "grape",
+    technical: {
+      ingredients: "Uva in natura selecionada.",
+      varieties: "Uvas Isabel e Bordô.",
+      origin: "Serra Gaúcha, Rio Grande do Sul, Brasil.",
+      process:
+        "Uvas maduras e sadias processadas no mesmo dia da colheita. Após a extração, o suco passa por decantação e estabilização natural, é pasteurizado e engarrafado a quente.",
+      conservation:
+        "Após aberto, conservar em geladeira entre 4 °C e 6 °C e consumir em até 5 dias.",
+      shelfLife: "2 anos, conforme especificação do fabricante.",
+      highlights: ["Sem adição de açúcar", "Sem conservantes", "Não alcoólico"],
+    },
   },
   {
     slug: "uva-branco",
@@ -22,6 +34,18 @@ export const products = [
     experience:
       "Uma proposta mais leve e versátil, pensada para acompanhar desde as pausas do dia até refeições compartilhadas.",
     occasions: ["Café da manhã", "Pausas ao longo do dia", "Refeições leves"],
+    seal: "grape",
+    technical: {
+      ingredients: "Uva in natura selecionada.",
+      varieties: "Uvas Niágara Branca e Moscato Embrapa.",
+      origin: "Serra Gaúcha, Rio Grande do Sul, Brasil.",
+      process:
+        "Extraído a frio a partir de uvas maduras e sadias. Os grãos são separados dos cachos, esmagados e o líquido é extraído por decantação; depois, o suco é pasteurizado e envasado.",
+      conservation:
+        "Após aberto, conservar em geladeira entre 4 °C e 6 °C e consumir em até 5 dias.",
+      shelfLife: "2 anos, conforme especificação do fabricante.",
+      highlights: ["Sem adição de açúcar", "Sem conservantes", "Não alcoólico"],
+    },
   },
   {
     slug: "uva-rose",
@@ -34,6 +58,8 @@ export const products = [
     experience:
       "Delicado sem passar despercebido, traz uma personalidade própria para encontros, recepções e momentos de descontração.",
     occasions: ["Encontros especiais", "Receber em casa", "Momentos de descontração"],
+    seal: "grape",
+    technical: null,
   },
   {
     slug: "laranja",
@@ -46,6 +72,8 @@ export const products = [
     experience:
       "Um sabor conhecido e acolhedor, apresentado com a qualidade e o cuidado que orientam toda a linha Vem Viver.",
     occasions: ["Café da manhã", "Lanches e pausas", "Rotina em família"],
+    seal: "orange",
+    technical: null,
   },
 ] as const;
 
