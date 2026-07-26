@@ -19,7 +19,7 @@ export default function Home() {
           </p>
           <div className="public-hero__actions">
             <Link className="button" href="/produtos">Conheça os sabores</Link>
-            <a className="text-link" href="#historia">Conheça a Vem Viver</a>
+            <Link className="text-link" href="/nossa-historia">Conheça a Vem Viver</Link>
           </div>
         </div>
 
@@ -85,6 +85,9 @@ export default function Home() {
             prazer em servir.
           </p>
           <span className="story-section__signature">O nome permanece. O cuidado também.</span>
+          <Link className="story-section__link" href="/nossa-historia">
+            Conheça a história completa →
+          </Link>
         </div>
       </section>
 
