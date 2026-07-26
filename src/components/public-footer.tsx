@@ -11,7 +11,7 @@ export function PublicFooter() {
       <div>
         <span>Navegue</span>
         <Link href="/produtos">Produtos</Link>
-        <Link href="/#historia">Nossa história</Link>
+        <Link href="/nossa-historia">Nossa história</Link>
         <Link href="/#comercial">Seja um parceiro</Link>
       </div>
       <div>
