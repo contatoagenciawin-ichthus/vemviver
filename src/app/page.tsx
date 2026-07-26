@@ -116,7 +116,7 @@ export default function Home() {
             Quer oferecer a linha Vem Viver em seu mercado, empório, restaurante ou
             canal de distribuição? Converse com nossa equipe comercial.
           </p>
-          <a className="button button--light" href="#contato">Quero ser parceiro</a>
+          <a className="button button--light" href="/contato?assunto=revenda">Quero ser parceiro</a>
         </div>
       </section>
 
