@@ -1428,11 +1428,66 @@ h1 em {
 }
 
 .product-experience,
+.product-seal-section,
 .product-formats,
 .product-information,
 .formats-intro {
   padding-right: max(24px, calc((100vw - 1380px) / 2));
   padding-left: max(24px, calc((100vw - 1380px) / 2));
+}
+
+.product-seal-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: var(--cream-50);
+}
+
+.product-seal {
+  width: var(--page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: .45fr 1fr;
+  align-items: center;
+  gap: 8vw;
+}
+
+.product-seal__asset {
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--product-accent), var(--cream-100) 90%);
+}
+
+.product-seal__asset img {
+  width: auto;
+  max-width: 220px;
+  max-height: 330px;
+  object-fit: contain;
+}
+
+.product-seal--orange .product-seal__asset img {
+  width: min(72%, 280px);
+  max-width: 280px;
+}
+
+.product-seal__copy {
+  max-width: 760px;
+}
+
+.product-seal__copy h2 {
+  margin: 20px 0 28px;
+  color: var(--forest-900);
+  font-family: var(--font-display), serif;
+  font-size: clamp(52px, 6vw, 88px);
+  letter-spacing: -0.045em;
+  line-height: .95;
+}
+
+.product-seal__copy > p:last-child {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
 }
 
 .product-experience {
@@ -1626,6 +1681,25 @@ h1 em {
   line-height: 1.7;
 }
 
+.product-process {
+  margin-top: 70px;
+  padding: 42px 0;
+  display: grid;
+  grid-template-columns: .35fr 1fr;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.product-process > p:last-child {
+  max-width: 780px;
+  margin: 0;
+  color: var(--forest-900);
+  font-family: var(--font-display), serif;
+  font-size: clamp(24px, 2.5vw, 36px);
+  line-height: 1.35;
+}
+
 .formats-intro {
   padding-top: 110px;
   padding-bottom: 110px;
@@ -1692,6 +1766,7 @@ h1 em {
   .catalog-card,
   .product-detail,
   .product-experience,
+  .product-seal,
   .product-formats,
   .formats-intro {
     grid-template-columns: 1fr;
@@ -1814,6 +1889,7 @@ h1 em {
   }
 
   .product-experience,
+  .product-seal-section,
   .product-formats,
   .product-information,
   .formats-intro {
@@ -1823,8 +1899,13 @@ h1 em {
 
   .product-formats__grid,
   .product-information__grid,
-  .product-information__heading {
+  .product-information__heading,
+  .product-process {
     grid-template-columns: 1fr;
+  }
+
+  .product-seal__asset {
+    min-height: 360px;
   }
 
   .product-formats__grid article {
