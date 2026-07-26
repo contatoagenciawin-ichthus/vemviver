@@ -215,6 +215,21 @@ h1 em {
 .bottle--rose { --juice: #93535f; }
 .bottle--laranja { --juice: var(--orange); }
 
+.bottle--1-5l {
+  width: 31%;
+  max-width: 205px;
+}
+
+.bottle--1-5l .bottle__neck {
+  width: 39%;
+  height: 94px;
+}
+
+.bottle--1-5l .bottle__glass {
+  height: 520px;
+  border-radius: 46px 46px 18px 18px;
+}
+
 .bottle__neck {
   width: 42%;
   height: 82px;
@@ -1377,6 +1392,27 @@ h1 em {
   min-width: 205px;
 }
 
+.product-detail__bottles {
+  min-height: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 18px;
+}
+
+.product-detail__bottles .bottle {
+  width: 165px;
+  min-width: 165px;
+  transform: none;
+}
+
+.product-detail__bottles .bottle--1-5l {
+  width: 185px;
+  min-width: 185px;
+}
+
 .product-detail__word {
   position: absolute;
   top: 70px;
@@ -1391,26 +1427,242 @@ h1 em {
   transform: translateX(-50%);
 }
 
-.product-detail__pending {
-  padding: 130px max(24px, calc((100vw - 1380px) / 2));
+.product-experience,
+.product-formats,
+.product-information,
+.formats-intro {
+  padding-right: max(24px, calc((100vw - 1380px) / 2));
+  padding-left: max(24px, calc((100vw - 1380px) / 2));
+}
+
+.product-experience {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  gap: 10vw;
   color: var(--cream-50);
   background: var(--forest-900);
 }
 
-.product-detail__pending .section-index {
+.product-experience .section-index,
+.product-formats .section-index {
   color: var(--gold);
 }
 
-.product-detail__pending h2 {
-  max-width: 800px;
-  color: var(--cream-50);
+.product-experience h2,
+.product-formats h2,
+.product-information h2,
+.formats-intro h2 {
+  margin: 20px 0 30px;
+  font-family: var(--font-display), serif;
+  font-size: clamp(52px, 6vw, 88px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
 }
 
-.product-detail__pending > p:last-child {
-  max-width: 680px;
-  margin-top: 36px;
+.product-experience__heading > p:last-child {
+  max-width: 670px;
   color: rgba(255, 253, 248, 0.66);
+  font-size: 17px;
   line-height: 1.8;
+}
+
+.product-experience__occasions {
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.product-experience__occasions > span {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.product-experience__occasions ul {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-experience__occasions li {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  font-family: var(--font-display), serif;
+  font-size: 25px;
+}
+
+.product-formats {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 7vw;
+  background: var(--cream-200);
+}
+
+.product-formats .section-index {
+  color: var(--olive-700);
+}
+
+.product-formats__copy > p:last-child {
+  max-width: 430px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.product-formats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.product-formats__grid article {
+  min-height: 620px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream-50);
+}
+
+.product-formats__bottle {
+  min-height: 455px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-formats__bottle .bottle {
+  width: 125px;
+  min-width: 125px;
+  transform: scale(.78);
+  transform-origin: bottom center;
+}
+
+.product-formats__bottle .bottle--1-5l {
+  width: 145px;
+  min-width: 145px;
+  transform: scale(.82);
+}
+
+.product-formats__grid strong {
+  margin-top: auto;
+  color: var(--product-accent);
+  font-family: var(--font-display), serif;
+  font-size: 42px;
+}
+
+.product-formats__grid p {
+  max-width: 290px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.product-information {
+  padding: 130px max(24px, calc((100vw - 1380px) / 2));
+  background: var(--cream-50);
+}
+
+.product-information__heading {
+  display: grid;
+  grid-template-columns: .35fr 1fr;
+  align-items: start;
+  gap: 40px;
+}
+
+.product-information h2 {
+  max-width: 800px;
+  margin-top: 0;
+  color: var(--forest-900);
+}
+
+.product-information__grid {
+  margin: 70px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.product-information__grid > div {
+  min-height: 150px;
+  padding: 28px 34px 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.product-information__grid > div:nth-child(even) {
+  padding-left: 34px;
+  border-left: 1px solid var(--line);
+}
+
+.product-information dt {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.product-information dd {
+  margin: 22px 0 0;
+  color: var(--forest-900);
+  font-family: var(--font-display), serif;
+  font-size: 27px;
+}
+
+.product-information__pending dd {
+  color: var(--muted);
+}
+
+.product-information__note {
+  max-width: 680px;
+  margin: 30px 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.formats-intro {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  color: var(--cream-50);
+  background: var(--forest-900);
+}
+
+.formats-intro .section-index {
+  color: var(--gold);
+}
+
+.formats-intro h2 {
+  margin-bottom: 0;
+}
+
+.formats-intro__sizes article {
+  padding: 26px 0;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+.formats-intro__sizes strong {
+  color: var(--gold);
+  font-family: var(--font-display), serif;
+  font-size: 38px;
+}
+
+.formats-intro__sizes p {
+  margin: 0;
+  color: rgba(255,253,248,.64);
+  line-height: 1.65;
 }
 
 @media (max-width: 900px) {
@@ -1438,7 +1690,10 @@ h1 em {
   .occasion-section,
   .trade-section,
   .catalog-card,
-  .product-detail {
+  .product-detail,
+  .product-experience,
+  .product-formats,
+  .formats-intro {
     grid-template-columns: 1fr;
   }
 
@@ -1452,6 +1707,10 @@ h1 em {
 
   .product-detail__visual {
     min-height: 590px;
+  }
+
+  .product-formats__copy {
+    max-width: 680px;
   }
 
   .product-showcase {
@@ -1536,6 +1795,50 @@ h1 em {
 
   .product-detail__back {
     margin-bottom: 48px;
+  }
+
+  .product-detail__bottles {
+    gap: 4px;
+  }
+
+  .product-detail__bottles .bottle {
+    min-width: 128px;
+    width: 128px;
+    transform: scale(.82);
+    transform-origin: bottom center;
+  }
+
+  .product-detail__bottles .bottle--1-5l {
+    min-width: 145px;
+    width: 145px;
+  }
+
+  .product-experience,
+  .product-formats,
+  .product-information,
+  .formats-intro {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .product-formats__grid,
+  .product-information__grid,
+  .product-information__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .product-formats__grid article {
+    min-height: 560px;
+    padding: 22px;
+  }
+
+  .product-information__grid > div:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .formats-intro__sizes article {
+    grid-template-columns: 92px 1fr;
   }
 
   .product-showcase {
