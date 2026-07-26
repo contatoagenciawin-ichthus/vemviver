@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Bottle } from "@/components/bottle";
 import { PublicFooter } from "@/components/public-footer";
 import { PublicHeader } from "@/components/public-header";
-import { products } from "@/data/products";
+import { packageSizes, products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Produtos | Vem Viver",
@@ -42,6 +42,21 @@ export default function ProductsPage() {
             </div>
           </article>
         ))}
+      </section>
+
+      <section className="formats-intro">
+        <div>
+          <p className="section-index">Formatos da linha</p>
+          <h2>Para a rotina.<br />Para compartilhar.</h2>
+        </div>
+        <div className="formats-intro__sizes">
+          {packageSizes.map((format) => (
+            <article key={format.volume}>
+              <strong>{format.volume}</strong>
+              <p>{format.description}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <PublicFooter />
