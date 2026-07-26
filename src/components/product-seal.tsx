@@ -19,7 +19,7 @@ export function ProductSeal({ kind }: ProductSealProps) {
           height={isGrape ? 350 : 280}
           src={
             isGrape
-              ? "/brand/seal-uva-puro.png"
+              ? "/brand/seal-uva-puro.svg"
               : "/brand/seal-laranja-puro.svg"
           }
           width={isGrape ? 135 : 280}
