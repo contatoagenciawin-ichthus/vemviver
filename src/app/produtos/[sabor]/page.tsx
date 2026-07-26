@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Bottle } from "@/components/bottle";
 import { PublicFooter } from "@/components/public-footer";
 import { PublicHeader } from "@/components/public-header";
+import { ProductSeal } from "@/components/product-seal";
 import { getProduct, packageSizes, products } from "@/data/products";
 
 type ProductPageProps = {
@@ -80,6 +81,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </section>
 
+      <section className="product-seal-section">
+        <ProductSeal kind={product.seal} />
+      </section>
+
       <section className="product-formats">
         <div className="product-formats__copy">
           <p className="section-index">Formatos disponíveis</p>
@@ -121,18 +126,53 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <dt>Conteúdo líquido</dt>
             <dd>1 L e 1,5 L</dd>
           </div>
-          <div className="product-information__pending">
-            <dt>Ingredientes e conservação</dt>
-            <dd>Informações em validação com o fabricante.</dd>
-          </div>
+          {product.technical ? (
+            <>
+              <div>
+                <dt>Ingredientes</dt>
+                <dd>{product.technical.ingredients}</dd>
+              </div>
+              <div>
+                <dt>Variedades</dt>
+                <dd>{product.technical.varieties}</dd>
+              </div>
+              <div>
+                <dt>Origem</dt>
+                <dd>{product.technical.origin}</dd>
+              </div>
+              <div>
+                <dt>Conservação</dt>
+                <dd>{product.technical.conservation}</dd>
+              </div>
+              <div>
+                <dt>Validade</dt>
+                <dd>{product.technical.shelfLife}</dd>
+              </div>
+              <div>
+                <dt>Características</dt>
+                <dd>{product.technical.highlights.join(" · ")}</dd>
+              </div>
+            </>
+          ) : (
+            <div className="product-information__pending">
+              <dt>Ficha técnica específica</dt>
+              <dd>Em validação com o fabricante para este produto.</dd>
+            </div>
+          )}
           <div className="product-information__pending">
             <dt>Informação nutricional</dt>
-            <dd>Tabela final será publicada após aprovação do rótulo.</dd>
+            <dd>A tabela será publicada após a aprovação final do rótulo.</dd>
           </div>
         </dl>
+        {product.technical && (
+          <div className="product-process">
+            <p className="section-index">Como é elaborado</p>
+            <p>{product.technical.process}</p>
+          </div>
+        )}
         <p className="product-information__note">
-          As especificações regulatórias completas serão inseridas a partir da
-          ficha técnica definitiva de cada produto.
+          As informações apresentadas têm como base a documentação técnica do
+          fabricante. A rotulagem final prevalecerá em caso de atualização.
         </p>
       </section>
 
