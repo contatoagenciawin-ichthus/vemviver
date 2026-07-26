@@ -5,29 +5,39 @@ import { PublicHeader } from "@/components/public-header";
 
 export const metadata: Metadata = {
   title: "Onde encontrar | Vem Viver",
-  description: "Encontre os sucos integrais Vem Viver ou indique sua cidade para receber novidades sobre novos pontos de venda.",
+  description: "Consulte a disponibilidade dos sucos integrais Vem Viver em Americana e região.",
 };
+
+const cities = [
+  "Americana",
+  "Santa Bárbara d’Oeste",
+  "Nova Odessa",
+  "Sumaré",
+  "Limeira",
+  "Piracicaba",
+  "Campinas",
+];
 
 const paths = [
   {
     index: "01",
     title: "Quero encontrar perto de mim",
-    text: "A distribuição começa por Americana e região. Conte onde você está para direcionarmos sua busca e avisarmos quando a Vem Viver chegar mais perto.",
-    href: "/contato?assunto=onde-encontrar",
+    text: "Fale com nosso atendimento e consulte o ponto de venda ou a disponibilidade mais próxima da sua localização.",
+    href: "/contato?assunto=Onde%20encontrar#mensagem",
     label: "Consultar minha região",
   },
   {
     index: "02",
     title: "Tenho um ponto de venda",
     text: "Mercados, empórios, lojas de produtos naturais, restaurantes e outros estabelecimentos podem solicitar atendimento comercial.",
-    href: "/contato?assunto=revenda",
+    href: "/contato?assunto=Revenda#mensagem",
     label: "Quero revender",
   },
   {
     index: "03",
     title: "Atuo com distribuição",
-    text: "Para ampliar a presença da marca de forma consistente, buscamos parceiros alinhados ao cuidado com produto, apresentação e atendimento.",
-    href: "/contato?assunto=distribuicao",
+    text: "Buscamos parceiros alinhados ao cuidado com o produto, sua apresentação e a qualidade do atendimento.",
+    href: "/contato?assunto=Distribuição#mensagem",
     label: "Falar sobre distribuição",
   },
 ];
@@ -42,8 +52,8 @@ export default function WhereToFindPage() {
           <h1>Mais perto da sua mesa, <em>passo a passo.</em></h1>
         </div>
         <p>
-          A Vem Viver está iniciando sua distribuição. Enquanto ampliamos os pontos
-          de venda, queremos saber onde você gostaria de encontrar nossos sucos.
+          A distribuição começa por sete cidades da região. Consulte nosso atendimento
+          para saber onde encontrar a Vem Viver perto de você.
         </p>
       </section>
 
@@ -51,15 +61,15 @@ export default function WhereToFindPage() {
         <div className="availability-region__mark" aria-hidden="true">
           <span>Ponto de partida</span>
           <strong>Americana</strong>
-          <small>São Paulo</small>
+          <small>e região</small>
         </div>
         <div>
-          <p className="section-index">Expansão responsável</p>
+          <p className="section-index">Cobertura inicial</p>
           <h2>Presença construída com bons parceiros.</h2>
+          <p>{cities.join(" · ")}</p>
           <p>
-            Começamos por Americana e região, próximos da origem da marca. Novas
-            localidades serão incluídas aqui conforme os pontos de venda forem
-            confirmados.
+            Novas localidades e pontos de venda serão incluídos conforme a distribuição
+            avançar.
           </p>
         </div>
       </section>
@@ -76,12 +86,20 @@ export default function WhereToFindPage() {
       </section>
 
       <section className="availability-note">
-        <p className="section-index">Em breve</p>
-        <h2>Um mapa vivo dos pontos de venda.</h2>
+        <p className="section-index">Atendimento direto</p>
+        <h2>Consulte a disponibilidade na sua cidade.</h2>
         <p>
-          Quando os primeiros parceiros estiverem confirmados, esta página passará a
-          reunir endereços, cidades e canais de compra da Vem Viver.
+          Fale com Luther Liasch pelo WhatsApp (19) 99708-8241. Atendimento de
+          segunda a sexta, das 8h às 18h, e sábado, das 8h às 13h.
         </p>
+        <a
+          className="button"
+          href="https://wa.me/5519997088241?text=Ol%C3%A1%2C%20Luther.%20Gostaria%20de%20saber%20onde%20encontrar%20os%20sucos%20Vem%20Viver."
+          target="_blank"
+          rel="noreferrer"
+        >
+          Consultar pelo WhatsApp
+        </a>
       </section>
       <PublicFooter />
     </main>
