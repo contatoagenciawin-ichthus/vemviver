@@ -10,9 +10,10 @@ export function PublicHeader() {
       <nav className="public-header__nav" aria-label="Navegação principal">
         <Link href="/produtos">Produtos</Link>
         <Link href="/nossa-historia">Nossa história</Link>
-        <Link href="/#comercial">Para revendedores</Link>
+        <Link href="/onde-encontrar">Onde encontrar</Link>
+        <Link href="/contato?assunto=revenda">Para revendedores</Link>
       </nav>
-      <Link className="button button--small" href="/#contato">Fale conosco</Link>
+      <Link className="button button--small" href="/contato">Fale conosco</Link>
     </header>
   );
 }
