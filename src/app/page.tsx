@@ -1,28 +1,13 @@
 import Link from "next/link";
 import { Bottle } from "@/components/bottle";
-import { BrandLogo } from "@/components/brand-logo";
-
-const products = [
-  { tone: "tinto", name: "Uva Tinto", note: "Profundo e encorpado" },
-  { tone: "branco", name: "Uva Branco", note: "Leve e luminoso" },
-  { tone: "rose", name: "Uva Rosé", note: "Delicado e acolhedor" },
-  { tone: "laranja", name: "Laranja", note: "Familiar e vibrante" },
-] as const;
+import { PublicFooter } from "@/components/public-footer";
+import { PublicHeader } from "@/components/public-header";
+import { products } from "@/data/products";
 
 export default function Home() {
   return (
     <main className="public-site">
-      <header className="public-header">
-        <Link className="public-header__brand" href="/" aria-label="Vem Viver — início">
-          <BrandLogo priority />
-        </Link>
-        <nav className="public-header__nav" aria-label="Navegação principal">
-          <a href="#produtos">Produtos</a>
-          <a href="#historia">Nossa história</a>
-          <a href="#comercial">Para revendedores</a>
-        </nav>
-        <a className="button button--small" href="#contato">Fale conosco</a>
-      </header>
+      <PublicHeader />
 
       <section className="public-hero">
         <div className="public-hero__copy">
@@ -33,7 +18,7 @@ export default function Home() {
             os bons momentos ainda mais especiais.
           </p>
           <div className="public-hero__actions">
-            <a className="button" href="#produtos">Conheça os sabores</a>
+            <Link className="button" href="/produtos">Conheça os sabores</Link>
             <a className="text-link" href="#historia">Conheça a Vem Viver</a>
           </div>
         </div>
@@ -69,7 +54,11 @@ export default function Home() {
 
         <div className="product-showcase">
           {products.map((product, index) => (
-            <article className={`product-tile product-tile--${product.tone}`} key={product.tone}>
+            <Link
+              className={`product-tile product-tile--${product.tone}`}
+              href={`/produtos/${product.slug}`}
+              key={product.tone}
+            >
               <span className="product-tile__number">0{index + 1}</span>
               <div className="product-tile__bottle">
                 <Bottle tone={product.tone} label={product.name} />
@@ -79,7 +68,7 @@ export default function Home() {
                 <p>{product.note}</p>
                 <span>Conhecer o produto →</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
@@ -128,27 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="public-footer" id="contato">
-        <div className="public-footer__brand">
-          <BrandLogo light />
-          <p>Sucos integrais para boas escolhas e bons momentos.</p>
-        </div>
-        <div>
-          <span>Navegue</span>
-          <a href="#produtos">Produtos</a>
-          <a href="#historia">Nossa história</a>
-          <a href="#comercial">Seja um parceiro</a>
-        </div>
-        <div>
-          <span>Contato</span>
-          <p>Canal comercial em implantação</p>
-          <p>Americana · São Paulo</p>
-        </div>
-        <div className="public-footer__bottom">
-          <p>© 2026 Vem Viver</p>
-          <Link href="/brand-lab">Brand Lab</Link>
-        </div>
-      </footer>
+      <PublicFooter />
     </main>
   );
 }
