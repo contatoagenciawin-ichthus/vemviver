@@ -12,15 +12,16 @@ export function PublicFooter() {
         <span>Navegue</span>
         <Link href="/produtos">Produtos</Link>
         <Link href="/nossa-historia">Nossa história</Link>
-        <Link href="/#comercial">Seja um parceiro</Link>
+        <Link href="/onde-encontrar">Onde encontrar</Link>
       </div>
       <div>
-        <span>Contato</span>
-        <p>Canal comercial em implantação</p>
-        <p>Americana · São Paulo</p>
+        <span>Converse com a Vem Viver</span>
+        <Link href="/contato">Consumidor</Link>
+        <Link href="/contato?assunto=revenda">Revenda</Link>
+        <Link href="/contato?assunto=distribuicao">Distribuição</Link>
       </div>
       <div className="public-footer__bottom">
-        <p>© 2026 Vem Viver</p>
+        <p>© 2026 Vem Viver · Americana, São Paulo</p>
         <Link href="/brand-lab">Brand Lab</Link>
       </div>
     </footer>
