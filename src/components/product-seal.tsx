@@ -13,8 +13,8 @@ export function ProductSeal({ kind }: ProductSealProps) {
         <Image
           alt={
             isGrape
-              ? "Selo Suco de Uva Puro, certificado de pureza e qualidade"
-              : "Identificador Suco de Laranja Puro Vem Viver"
+              ? "Selo de referência Suco de Uva Puro"
+              : "Identificador conceitual de laranja Vem Viver"
           }
           height={isGrape ? 350 : 280}
           src={
@@ -27,17 +27,17 @@ export function ProductSeal({ kind }: ProductSealProps) {
       </div>
       <div className="product-seal__copy">
         <p className="section-index">
-          {isGrape ? "Pureza certificada" : "A identidade da pureza"}
+          {isGrape ? "Elemento de terceiro" : "Elemento proprietário"}
         </p>
         <h2>
           {isGrape
-            ? "Suco de uva puro, com certificação."
-            : "Laranja pura, com a assinatura Vem Viver."}
+            ? "Aplicação condicionada à validação."
+            : "Um recurso visual da linguagem Vem Viver."}
         </h2>
         <p>
           {isGrape
-            ? "O selo identifica o suco de uva certificado em pureza e qualidade pela Associação Brasileira de Elaboradores de Suco de Uva Puro."
-            : "Este identificador proprietário comunica a proposta de um suco de laranja puro e integral. Ele faz parte da linguagem da Vem Viver e não representa uma certificação oficial."}
+            ? "O arquivo permanece no projeto como referência. Qualquer uso comercial dependerá da confirmação das regras, autorização aplicável e adequação do produto."
+            : "Este identificador é um estudo proprietário da Vem Viver. Sua redação e aplicação comercial também serão revistas antes de qualquer publicação ou impressão."}
         </p>
       </div>
     </article>
