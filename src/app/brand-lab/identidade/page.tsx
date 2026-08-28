@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { BrandLogo } from "@/components/brand-logo";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Vem Viver | Brand Foundation v1.0",
+  description: "Identidade visual consolidada da marca Vem Viver.",
+  robots: { index: false, follow: false },
+};
 
 const colors = [
   { name: "Verde Vem Viver", hex: "#394524", className: styles.green },
@@ -26,12 +33,20 @@ export default function IdentidadePage() {
       </header>
 
       <section className={styles.hero}>
-        <p className={styles.eyebrow}>Identidade visual · consolidação</p>
+        <p className={styles.eyebrow}>Identidade visual · versão 1.0</p>
         <div className={styles.heroLogo}><BrandLogo priority /></div>
-        <h1>Conceito aprovado.<br/><em>Sistema em consolidação.</em></h1>
+        <h1>Conceito aprovado.<br/><em>Fundação consolidada.</em></h1>
         <p className={styles.lead}>
-          Esta página organiza a identidade-base Vem Viver antes de qualquer especificação de produção gráfica.
+          Esta é a referência oficial da identidade-base Vem Viver para aplicações institucionais e digitais. Especificações de produção gráfica permanecem em uma etapa futura.
         </p>
+        <div className={styles.heroActions}>
+          <a className={styles.primaryAction} href="/brand/vem-viver-logo-master.svg" download>
+            Baixar master SVG
+          </a>
+          <a className={styles.secondaryAction} href="/apresentacao">
+            Voltar ao hub do projeto
+          </a>
+        </div>
       </section>
 
       <section className={styles.section}>
