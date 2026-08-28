@@ -46,7 +46,7 @@ export default function ProductsPage() {
 
       <section className="formats-intro">
         <div>
-          <p className="section-index">Formatos da linha</p>
+          <p className="section-index">Formatos em estudo</p>
           <h2>Para a rotina.<br />Para compartilhar.</h2>
         </div>
         <div className="formats-intro__sizes">
