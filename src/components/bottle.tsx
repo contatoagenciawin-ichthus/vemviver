@@ -20,7 +20,7 @@ export function Bottle({ tone, label, volume = "1 L", size = "1l" }: BottleProps
             <BrandLogo />
           </span>
           <span className="bottle__flavor">{label}</span>
-          <span className="bottle__type">Suco integral</span>
+          <span className="bottle__type">Suco 100% integral</span>
           <span className="bottle__volume">{volume}</span>
         </div>
       </div>
