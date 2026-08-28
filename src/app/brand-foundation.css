@@ -1,0 +1,19 @@
+:root {
+  /* Brand Foundation v1.0 — institutional tokens */
+  --cream-50: #fffdf8;
+  --cream-100: #f6f0e5;
+  --cream-200: #eadfcd;
+  --forest-900: #394524;
+  --forest-800: #46542d;
+  --olive-700: #5b6637;
+  --olive-500: #7e8749;
+  --ink: #22251f;
+  --muted: #6c7064;
+  --wine: #541d33;
+  --grape: #2f203b;
+  --gold: #b89c4a;
+  --rose: #b7737d;
+  --orange: #ca7b2d;
+  --white-grape: #b89c4a;
+  --line: rgba(57, 69, 36, 0.16);
+}
