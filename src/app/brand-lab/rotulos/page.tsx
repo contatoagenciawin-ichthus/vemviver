@@ -183,7 +183,7 @@ export default function LabelReviewPage() {
               <p>{product.note}</p>
               <h3>{product.name}</h3>
               <p>{product.copy}</p>
-              <small>{product.seal ? "O estudo considera o selo de uva; sua aplicação final dependerá de validação." : "A variante de laranja usa linguagem proprietária, sem selo de certificação de uva."}</small>
+              <small>{product.seal ? "A Casa Granda confirmou a condição 100% integral e o selo de pureza para a linha de uva; a aplicação final seguirá o arquivo oficial e suas regras técnicas." : "A condição 100% integral foi confirmada com a Casa Granda. A variante de laranja usa linguagem proprietária, sem selo de certificação de uva."}</small>
             </div>
             <div className={styles.pair}>
               <figure>
@@ -205,12 +205,12 @@ export default function LabelReviewPage() {
         <ol>
           <li><span>01</span><strong>Referência, não arte final</strong><p>Os mockups ajudam a observar composição, família e hierarquia.</p></li>
           <li><span>02</span><strong>A marca atual prevalece</strong><p>A Brand Foundation v1.0 substitui qualquer versão anterior da assinatura presente nestas imagens.</p></li>
-          <li><span>03</span><strong>Cores seguem como direção</strong><p>Os códigos institucionais consolidados orientam os próximos refinamentos.</p></li>
-          <li><span>04</span><strong>Produção está fora desta fase</strong><p>Faca, substrato, impressão e acabamentos serão tratados somente quando os insumos técnicos estiverem definidos.</p></li>
+          <li><span>03</span><strong>Produto já confirmado</strong><p>A condição 100% integral e, para os sucos de uva, o selo de pureza já foram confirmados com a Casa Granda.</p></li>
+          <li><span>04</span><strong>Produção está fora desta fase</strong><p>Faca, substrato, impressão e acabamentos serão tratados somente quando os demais insumos técnicos estiverem definidos.</p></li>
         </ol>
         <div className={styles.nextStep}>
           <span>Quando a fase gráfica for aberta</span>
-          <p>Retomaremos estes aprendizados com a master atual, medidas reais, dados técnicos aprovados e especificações do fabricante e do fornecedor gráfico.</p>
+          <p>Retomaremos estes aprendizados com a master atual, medidas reais, arquivo oficial do selo, dados técnicos aprovados e especificações da Casa Granda e do fornecedor gráfico.</p>
         </div>
       </section>
 
