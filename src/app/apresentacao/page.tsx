@@ -20,6 +20,15 @@ const materials = [
     featured: true,
   },
   {
+    eyebrow: "Material institucional",
+    title: "Apresentação da marca",
+    copy: "Narrativa atualizada para apresentar a origem, o novo ciclo, a identidade e a arquitetura inicial Vem Viver a parceiros e interlocutores do projeto.",
+    status: "Atualizada",
+    href: "/apresentacao/institucional",
+    action: "Abrir apresentação",
+    featured: false,
+  },
+  {
     eyebrow: "Fundação",
     title: "Brand Lab",
     copy: "Ambiente vivo com essência, princípios, sistema visual, linha inicial e decisões que orientam a evolução da Vem Viver.",
@@ -49,8 +58,8 @@ const materials = [
 ] as const;
 
 const roadmap = [
-  ["01", "Consolidar a fonte única de verdade", "Centralizar logo, regras, decisões e materiais aprovados no Brand Lab e nesta área de apresentação."],
-  ["02", "Atualizar aplicações institucionais", "Substituir versões antigas da marca em apresentações, site, materiais comerciais e peças de projeto."],
+  ["01", "Usar a apresentação institucional como material vigente", "A narrativa para parceiros passa a usar exclusivamente a identidade consolidada e o estágio real do projeto."],
+  ["02", "Completar as aplicações institucionais", "Substituir versões antigas da marca no site, materiais comerciais e demais pontos de contato em evolução."],
   ["03", "Validar a arquitetura do portfólio", "Ajustar linha, nomenclaturas, mensagens e aplicações conceituais antes de qualquer preparação de gráfica."],
   ["04", "Abrir a fase de produção quando houver insumos", "Somente com embalagem, fabricante e fornecedor definidos entram faca, substrato, prova de cor e pré-impressão."],
 ] as const;
