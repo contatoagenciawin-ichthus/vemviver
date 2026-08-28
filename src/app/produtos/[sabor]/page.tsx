@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { Bottle } from "@/components/bottle";
 import { PublicFooter } from "@/components/public-footer";
 import { PublicHeader } from "@/components/public-header";
-import { ProductSeal } from "@/components/product-seal";
 import { getProduct, packageSizes, products } from "@/data/products";
 
 type ProductPageProps = {
@@ -40,11 +39,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="product-detail">
         <div className="product-detail__copy">
           <Link className="product-detail__back" href="/produtos">← Todos os sabores</Link>
-          <p className="eyebrow">Suco 100% integral</p>
+          <p className="eyebrow">Suco integral</p>
           <h1>{product.name}</h1>
           <strong>{product.note}</strong>
           <p>{product.intro}</p>
-          <Link className="button" href="/#contato">Onde encontrar</Link>
+          <Link className="button" href="/onde-encontrar">Onde encontrar</Link>
         </div>
         <div className="product-detail__visual">
           <span className="product-detail__word" aria-hidden="true">{product.name}</span>
@@ -81,17 +80,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </section>
 
-      <section className="product-seal-section">
-        <ProductSeal kind={product.seal} />
-      </section>
-
       <section className="product-formats">
         <div className="product-formats__copy">
-          <p className="section-index">Formatos disponíveis</p>
+          <p className="section-index">Formatos em estudo</p>
           <h2>Escolha como<br />Vem Viver.</h2>
           <p>
-            Dois volumes pensados para acompanhar tanto a rotina quanto os
-            momentos compartilhados.
+            Os formatos de 1 L e 1,5 L seguem como referência de portfólio enquanto
+            embalagem e especificações técnicas são confirmadas.
           </p>
         </div>
         <div className="product-formats__grid">
@@ -114,43 +109,43 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="product-information">
         <div className="product-information__heading">
-          <p className="section-index">Informações do produto</p>
-          <h2>Clareza em cada escolha.</h2>
+          <p className="section-index">Informações de referência</p>
+          <h2>Clareza antes de publicar.</h2>
         </div>
         <dl className="product-information__grid">
           <div>
             <dt>Categoria</dt>
-            <dd>Suco 100% integral</dd>
+            <dd>Suco integral</dd>
           </div>
           <div>
-            <dt>Conteúdo líquido</dt>
+            <dt>Volumes em estudo</dt>
             <dd>1 L e 1,5 L</dd>
           </div>
           {product.technical ? (
             <>
               <div>
-                <dt>Ingredientes</dt>
+                <dt>Ingredientes informados</dt>
                 <dd>{product.technical.ingredients}</dd>
               </div>
               <div>
-                <dt>Variedades</dt>
+                <dt>Variedades informadas</dt>
                 <dd>{product.technical.varieties}</dd>
               </div>
               <div>
-                <dt>Origem</dt>
+                <dt>Origem informada</dt>
                 <dd>{product.technical.origin}</dd>
               </div>
               <div>
-                <dt>Conservação</dt>
+                <dt>Conservação informada</dt>
                 <dd>{product.technical.conservation}</dd>
               </div>
               <div>
-                <dt>Validade</dt>
+                <dt>Validade informada</dt>
                 <dd>{product.technical.shelfLife}</dd>
               </div>
-              <div>
-                <dt>Características</dt>
-                <dd>{product.technical.highlights.join(" · ")}</dd>
+              <div className="product-information__pending">
+                <dt>Alegações comerciais</dt>
+                <dd>Em validação antes de qualquer publicação ou uso em embalagem.</dd>
               </div>
             </>
           ) : (
@@ -161,18 +156,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
           )}
           <div className="product-information__pending">
             <dt>Informação nutricional</dt>
-            <dd>A tabela será publicada após a aprovação final do rótulo.</dd>
+            <dd>Será incorporada após validação técnica e regulatória.</dd>
           </div>
         </dl>
         {product.technical && (
           <div className="product-process">
-            <p className="section-index">Como é elaborado</p>
+            <p className="section-index">Processo informado</p>
             <p>{product.technical.process}</p>
           </div>
         )}
         <p className="product-information__note">
-          As informações apresentadas têm como base a documentação técnica do
-          fabricante. A rotulagem final prevalecerá em caso de atualização.
+          As informações desta prévia têm como base documentação técnica parcial e
+          servem ao desenvolvimento do projeto. Dados comerciais e regulatórios só
+          serão publicados após validação final.
         </p>
       </section>
 
