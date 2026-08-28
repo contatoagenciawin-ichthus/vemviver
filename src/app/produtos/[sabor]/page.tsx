@@ -39,7 +39,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="product-detail">
         <div className="product-detail__copy">
           <Link className="product-detail__back" href="/produtos">← Todos os sabores</Link>
-          <p className="eyebrow">Suco integral</p>
+          <p className="eyebrow">Suco 100% integral</p>
           <h1>{product.name}</h1>
           <strong>{product.note}</strong>
           <p>{product.intro}</p>
@@ -115,7 +115,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <dl className="product-information__grid">
           <div>
             <dt>Categoria</dt>
-            <dd>Suco integral</dd>
+            <dd>Suco 100% integral</dd>
+          </div>
+          <div>
+            <dt>Confirmação do produto</dt>
+            <dd>Condição 100% integral confirmada pelo fabricante e envasador Casa Granda.</dd>
           </div>
           <div>
             <dt>Volumes em estudo</dt>
@@ -144,14 +148,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <dd>{product.technical.shelfLife}</dd>
               </div>
               <div className="product-information__pending">
-                <dt>Alegações comerciais</dt>
-                <dd>Em validação antes de qualquer publicação ou uso em embalagem.</dd>
+                <dt>Demais alegações</dt>
+                <dd>Serão publicadas conforme a documentação final de cada SKU.</dd>
               </div>
             </>
           ) : (
             <div className="product-information__pending">
               <dt>Ficha técnica específica</dt>
-              <dd>Em validação com o fabricante para este produto.</dd>
+              <dd>Em consolidação para este sabor; a condição 100% integral já está confirmada.</dd>
             </div>
           )}
           <div className="product-information__pending">
@@ -166,9 +170,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         )}
         <p className="product-information__note">
-          As informações desta prévia têm como base documentação técnica parcial e
-          servem ao desenvolvimento do projeto. Dados comerciais e regulatórios só
-          serão publicados após validação final.
+          A condição 100% integral já foi confirmada com a Casa Granda. Os demais
+          dados técnicos e regulatórios serão incorporados à medida que a documentação
+          final de cada apresentação for consolidada.
         </p>
       </section>
 
