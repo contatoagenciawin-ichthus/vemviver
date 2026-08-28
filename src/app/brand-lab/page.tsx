@@ -16,7 +16,7 @@ const principles = [
 
 const colorTokens = [
   { name: "Marfim", value: "#F6F0E5", token: "cream-100" },
-  { name: "Verde profundo", value: "#17372A", token: "forest-900" },
+  { name: "Verde Vem Viver", value: "#394524", token: "brand-green" },
   { name: "Uva tinto", value: "#541D33", token: "wine" },
   { name: "Uva branco", value: "#B89C4A", token: "white-grape" },
   { name: "Uva rosé", value: "#B7737D", token: "rose" },
@@ -31,11 +31,12 @@ export default function Home() {
           <BrandLogo priority />
         </a>
         <nav className="site-header__nav" aria-label="Navegação principal">
+          <a href="/brand-lab/identidade">Identidade</a>
           <a href="#essencia">Essência</a>
           <a href="#sistema">Sistema</a>
           <a href="#linha">Linha inicial</a>
         </nav>
-        <span className="site-header__tag">Brand Lab · 01</span>
+        <span className="site-header__tag">Brand Foundation · 1.0</span>
       </header>
 
       <section className="hero" id="inicio">
@@ -46,8 +47,8 @@ export default function Home() {
             Uma marca construída com critério para ocupar a mesa, a rotina e os bons
             momentos da vida.
           </p>
-          <a className="text-link" href="#essencia">
-            Conheça a nossa essência <span aria-hidden="true">↓</span>
+          <a className="text-link" href="/brand-lab/identidade">
+            Ver identidade consolidada <span aria-hidden="true">→</span>
           </a>
         </div>
 
@@ -165,7 +166,7 @@ export default function Home() {
         <p className="section-index">Princípio central</p>
         <blockquote>“O suco que temos prazer em servir.”</blockquote>
         <BrandLogo light />
-        <p className="closing__note">Fundação digital · versão 01</p>
+        <p className="closing__note">Fundação digital · versão 1.0</p>
       </section>
     </main>
   );
