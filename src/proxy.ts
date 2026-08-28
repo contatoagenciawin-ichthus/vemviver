@@ -5,6 +5,7 @@ const PRESENTATION_HOST = "vemviver.emporioliasch.com.br";
 
 const presentationRoutes = new Map([
   ["/", "/apresentacao"],
+  ["/identidade", "/brand-lab/identidade"],
   ["/rotulos", "/brand-lab/rotulos"],
   ["/marca", "/brand-lab"],
   ["/site", "/site-preview"],
