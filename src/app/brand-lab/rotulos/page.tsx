@@ -62,6 +62,10 @@ function ProductImage({ src, alt, priority = false }: { src: string; alt: string
   );
 }
 
+function classNames(...names: Array<string | undefined>) {
+  return names.filter(Boolean).join(" ");
+}
+
 export default function LabelReviewPage() {
   return (
     <main className={styles.page}>
@@ -89,7 +93,7 @@ export default function LabelReviewPage() {
         </div>
         <div className={styles.heroLineup} aria-label="Estudos conceituais da família Vem Viver em 1,5 litro">
           {products.map((product, index) => (
-            <div className={`${styles.heroBottle} ${styles[product.id]}`} key={product.id}>
+            <div className={classNames(styles.heroBottle, styles[product.id])} key={product.id}>
               <ProductImage
                 alt={`${product.name} Vem Viver, embalagem conceitual de 1,5 litro`}
                 priority={index < 2}
@@ -173,7 +177,7 @@ export default function LabelReviewPage() {
           <h2>Quatro expressões de uma mesma marca.</h2>
         </div>
         {products.map((product, index) => (
-          <article className={`${styles.flavor} ${styles[`flavor-${product.id}`]}`} id={product.id} key={product.id}>
+          <article className={classNames(styles.flavor, styles[`flavor-${product.id}`])} id={product.id} key={product.id}>
             <div className={styles.flavorCopy}>
               <span>0{index + 1}</span>
               <p>{product.note}</p>
