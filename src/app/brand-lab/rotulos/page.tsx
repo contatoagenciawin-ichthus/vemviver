@@ -4,8 +4,8 @@ import { BrandLogo } from "@/components/brand-logo";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Apresentação dos rótulos | Vem Viver",
-  description: "Apresentação interna da família de rótulos Vem Viver.",
+  title: "Estudos conceituais de rótulos | Vem Viver",
+  description: "Arquivo interno de estudos conceituais da família de rótulos Vem Viver.",
   robots: { index: false, follow: false },
 };
 
@@ -66,29 +66,28 @@ export default function LabelReviewPage() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <a className={styles.logo} href="#inicio" aria-label="Vem Viver — início da apresentação">
+        <a className={styles.logo} href="#inicio" aria-label="Vem Viver — início dos estudos conceituais">
           <BrandLogo priority />
         </a>
-        <nav className={styles.nav} aria-label="Navegação da apresentação">
+        <nav className={styles.nav} aria-label="Navegação dos estudos">
           <a href="#conceito">Conceito</a>
           <a href="#familia">Família</a>
           <a href="#sabores">Sabores</a>
-          <a href="#aprovacao">Aprovação</a>
+          <a href="#status">Status</a>
         </nav>
-        <span className={styles.internalTag}>Apresentação interna</span>
+        <span className={styles.internalTag}>Arquivo conceitual</span>
       </header>
 
       <section className={styles.hero} id="inicio">
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Família de rótulos · 1 L e 1,5 L</p>
+          <p className={styles.eyebrow}>Estudos conceituais · 1 L e 1,5 L</p>
           <h1>Uma identidade para ocupar a <em>mesa</em> e permanecer na memória.</h1>
           <p className={styles.lead}>
-            Quatro sabores, dois volumes e uma arquitetura visual única para apresentar
-            a Vem Viver com clareza, presença e unidade.
+            Estes mockups registram uma etapa anterior da exploração de embalagem. Eles continuam úteis para avaliar arquitetura e família, mas não representam arte final nem prevalecem sobre a Brand Foundation v1.0.
           </p>
-          <a className={styles.textLink} href="#conceito">Conheça a proposta <span>↓</span></a>
+          <a className={styles.textLink} href="#conceito">Revisar os estudos <span>↓</span></a>
         </div>
-        <div className={styles.heroLineup} aria-label="Família Vem Viver em 1,5 litro">
+        <div className={styles.heroLineup} aria-label="Estudos conceituais da família Vem Viver em 1,5 litro">
           {products.map((product, index) => (
             <div className={`${styles.heroBottle} ${styles[product.id]}`} key={product.id}>
               <ProductImage
@@ -120,7 +119,7 @@ export default function LabelReviewPage() {
           <article>
             <span>03</span>
             <h3>Origem e qualidade</h3>
-            <p>Fruta ilustrada, dourado e selo reforçam procedência e cuidado.</p>
+            <p>Fruta ilustrada, detalhes de apoio e organização editorial constroem percepção de cuidado.</p>
           </article>
         </div>
         <blockquote>“Primeiro reconhecemos Vem Viver. Depois, escolhemos o sabor.”</blockquote>
@@ -132,19 +131,19 @@ export default function LabelReviewPage() {
             <p className={styles.sectionIndex}>02 · Família</p>
             <h2>A mesma assinatura nos dois volumes.</h2>
           </div>
-          <p>A arquitetura permanece. Muda apenas o necessário para reconhecer cada produto.</p>
+          <p>A arquitetura permanece como referência conceitual; proporções e aplicações serão reavaliadas quando a fase de embalagem for reaberta.</p>
         </div>
 
         <div className={styles.volumeBlock}>
           <div className={styles.volumeIntro}>
-            <span>Volume 01</span>
+            <span>Estudo 01</span>
             <strong>1 L</strong>
-            <p>Uma apresentação próxima, equilibrada e com boa presença de prateleira.</p>
+            <p>Referência de hierarquia, presença de marca e relação entre os sabores.</p>
           </div>
           <div className={styles.volumeLineup}>
             {products.map((product) => (
               <figure key={product.id}>
-                <ProductImage alt={`${product.name} Vem Viver, 1 litro`} src={product.one} />
+                <ProductImage alt={`${product.name} Vem Viver, estudo conceitual de 1 litro`} src={product.one} />
                 <figcaption>{product.name}</figcaption>
               </figure>
             ))}
@@ -153,14 +152,14 @@ export default function LabelReviewPage() {
 
         <div className={`${styles.volumeBlock} ${styles.volumeBlockDark}`}>
           <div className={styles.volumeIntro}>
-            <span>Volume 02</span>
+            <span>Estudo 02</span>
             <strong>1,5 L</strong>
-            <p>Mais presença, mantendo a hierarquia, a leitura e o reconhecimento da marca.</p>
+            <p>Referência de escala e consistência de família em uma embalagem de maior presença.</p>
           </div>
           <div className={styles.volumeLineup}>
             {products.map((product) => (
               <figure key={product.id}>
-                <ProductImage alt={`${product.name} Vem Viver, 1,5 litro`} src={product.oneHalf} />
+                <ProductImage alt={`${product.name} Vem Viver, estudo conceitual de 1,5 litro`} src={product.oneHalf} />
                 <figcaption>{product.name}</figcaption>
               </figure>
             ))}
@@ -180,15 +179,15 @@ export default function LabelReviewPage() {
               <p>{product.note}</p>
               <h3>{product.name}</h3>
               <p>{product.copy}</p>
-              <small>{product.seal ? "Selo aplicado nos dois volumes." : "Sem selo de uva nesta variante."}</small>
+              <small>{product.seal ? "O estudo considera o selo de uva; sua aplicação final dependerá de validação." : "A variante de laranja usa linguagem proprietária, sem selo de certificação de uva."}</small>
             </div>
             <div className={styles.pair}>
               <figure>
-                <ProductImage alt={`${product.name}, mockup de 1 litro`} src={product.one} />
+                <ProductImage alt={`${product.name}, mockup conceitual de 1 litro`} src={product.one} />
                 <figcaption>1 L</figcaption>
               </figure>
               <figure>
-                <ProductImage alt={`${product.name}, mockup de 1,5 litro`} src={product.oneHalf} />
+                <ProductImage alt={`${product.name}, mockup conceitual de 1,5 litro`} src={product.oneHalf} />
                 <figcaption>1,5 L</figcaption>
               </figure>
             </div>
@@ -196,24 +195,24 @@ export default function LabelReviewPage() {
         ))}
       </section>
 
-      <section className={styles.approval} id="aprovacao">
-        <p className={styles.sectionIndex}>04 · Aprovação</p>
-        <h2>O que precisamos definir agora.</h2>
+      <section className={styles.approval} id="status">
+        <p className={styles.sectionIndex}>04 · Status</p>
+        <h2>Como ler estes estudos agora.</h2>
         <ol>
-          <li><span>01</span><strong>Direção visual</strong><p>A linguagem geral da família.</p></li>
-          <li><span>02</span><strong>Cores</strong><p>A diferenciação dos quatro sabores.</p></li>
-          <li><span>03</span><strong>Nomenclaturas</strong><p>Tinto, Rosé, Branco e Laranja.</p></li>
-          <li><span>04</span><strong>Aplicações</strong><p>Rótulos de 1 L e 1,5 L.</p></li>
+          <li><span>01</span><strong>Referência, não arte final</strong><p>Os mockups ajudam a observar composição, família e hierarquia.</p></li>
+          <li><span>02</span><strong>A marca atual prevalece</strong><p>A Brand Foundation v1.0 substitui qualquer versão anterior da assinatura presente nestas imagens.</p></li>
+          <li><span>03</span><strong>Cores seguem como direção</strong><p>Os códigos institucionais consolidados orientam os próximos refinamentos.</p></li>
+          <li><span>04</span><strong>Produção está fora desta fase</strong><p>Faca, substrato, impressão e acabamentos serão tratados somente quando os insumos técnicos estiverem definidos.</p></li>
         </ol>
         <div className={styles.nextStep}>
-          <span>Após a aprovação</span>
-          <p>Vetorização, medidas finais, verso técnico e arte-final para produção.</p>
+          <span>Quando a fase gráfica for aberta</span>
+          <p>Retomaremos estes aprendizados com a master atual, medidas reais, dados técnicos aprovados e especificações do fabricante e do fornecedor gráfico.</p>
         </div>
       </section>
 
       <footer className={styles.footer}>
         <BrandLogo light />
-        <p>Apresentação conceitual. Imagens sujeitas a refinamento técnico e validação final.</p>
+        <p>Arquivo conceitual de projeto. A Brand Foundation v1.0 é a referência vigente da marca.</p>
       </footer>
     </main>
   );
