@@ -24,7 +24,7 @@ export default function Home() {
         </div>
 
         <div className="public-hero__visual" aria-label="Sucos integrais Vem Viver">
-          <span className="public-hero__stamp">100% integral</span>
+          <span className="public-hero__stamp">Sucos integrais</span>
           <div className="public-hero__halo" />
           <Bottle tone="tinto" label="Uva Tinto" />
           <Bottle tone="branco" label="Uva Branco" />
