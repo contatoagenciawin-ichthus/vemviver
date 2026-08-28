@@ -144,7 +144,7 @@ export default function InstitutionalPresentationPage() {
       </section>
 
       <section className={styles.stage}>
-        <div className={styles.stageCopy}>
+        <div>
           <p className={styles.sectionIndex}>06 · Momento atual</p>
           <h2>A base da marca está consolidada. Agora, o trabalho é transformar consistência em presença.</h2>
         </div>
