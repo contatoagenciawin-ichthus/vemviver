@@ -11,10 +11,10 @@ export default function Home() {
 
       <section className="public-hero">
         <div className="public-hero__copy">
-          <p className="eyebrow">Sucos integrais · Desde 1992</p>
+          <p className="eyebrow">Sucos 100% integrais · Desde 1992</p>
           <h1>Boas escolhas merecem ser <em>servidas.</em></h1>
           <p>
-            Sucos integrais feitos para ocupar a mesa, acompanhar a rotina e tornar
+            Sucos 100% integrais feitos para ocupar a mesa, acompanhar a rotina e tornar
             os bons momentos ainda mais especiais.
           </p>
           <div className="public-hero__actions">
@@ -23,8 +23,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="public-hero__visual" aria-label="Sucos integrais Vem Viver">
-          <span className="public-hero__stamp">Sucos integrais</span>
+        <div className="public-hero__visual" aria-label="Sucos 100% integrais Vem Viver">
+          <span className="public-hero__stamp">Sucos 100% integrais</span>
           <div className="public-hero__halo" />
           <Bottle tone="tinto" label="Uva Tinto" />
           <Bottle tone="branco" label="Uva Branco" />
