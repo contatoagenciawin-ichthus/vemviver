@@ -11,7 +11,7 @@ export function Bottle({ tone, label, volume = "1 L", size = "1l" }: BottleProps
   return (
     <div
       className={`bottle bottle--${tone} bottle--${size}`}
-      aria-label={`Suco de ${label}, embalagem de ${volume}`}
+      aria-label={`${label} Vem Viver, estudo de embalagem de ${volume}`}
     >
       <div className="bottle__neck" />
       <div className="bottle__glass">
@@ -20,7 +20,7 @@ export function Bottle({ tone, label, volume = "1 L", size = "1l" }: BottleProps
             <BrandLogo />
           </span>
           <span className="bottle__flavor">{label}</span>
-          <span className="bottle__type">Suco 100% integral</span>
+          <span className="bottle__type">Suco integral</span>
           <span className="bottle__volume">{volume}</span>
         </div>
       </div>
