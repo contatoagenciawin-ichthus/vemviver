@@ -5,54 +5,54 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Projeto Vem Viver | Área de apresentação",
-  description: "Ambiente de acompanhamento, alinhamento e aprovação do projeto Vem Viver.",
+  description: "Ambiente de acompanhamento, alinhamento e consolidação do projeto Vem Viver.",
   robots: { index: false, follow: false },
 };
 
 const materials = [
   {
-    eyebrow: "Aprovação atual",
-    title: "Família de rótulos",
-    copy: "Apresentação consolidada dos rótulos da linha inicial, com quatro sabores e embalagens de 1 L e 1,5 L.",
-    status: "Aguardando aprovação",
-    href: "/rotulos",
-    action: "Abrir apresentação",
+    eyebrow: "Identidade · v1.0",
+    title: "Brand Foundation",
+    copy: "Logomarca aprovada, master vetorial, paleta institucional, tipografia de apoio e regras básicas de governança da marca.",
+    status: "Consolidada",
+    href: "/brand-lab/identidade",
+    action: "Abrir identidade",
     featured: true,
   },
   {
     eyebrow: "Fundação",
-    title: "Marca e sistema visual",
-    copy: "Essência, princípios de identidade, paleta, tipografia e lógica visual que sustentam a Vem Viver.",
-    status: "Base definida",
-    href: "/marca",
-    action: "Ver Brand Lab",
+    title: "Brand Lab",
+    copy: "Ambiente vivo com essência, princípios, sistema visual, linha inicial e decisões que orientam a evolução da Vem Viver.",
+    status: "Em uso",
+    href: "/brand-lab",
+    action: "Abrir Brand Lab",
     featured: false,
   },
   {
-    eyebrow: "Portfólio",
-    title: "Linha de produtos",
-    copy: "Estrutura inicial dos produtos e informações já consolidadas para a presença institucional da marca.",
+    eyebrow: "Aplicação conceitual",
+    title: "Estudos de rótulos",
+    copy: "Família visual em estudo para os produtos iniciais. Esta área serve para direção e comparação, não como arquivo de produção gráfica.",
+    status: "Conceitual",
+    href: "/brand-lab/rotulos",
+    action: "Revisar estudos",
+    featured: false,
+  },
+  {
+    eyebrow: "Presença institucional",
+    title: "Site e ecossistema",
+    copy: "Prévia da experiência pública que receberá conteúdos e aplicações finais conforme as decisões de marca forem consolidadas.",
     status: "Em evolução",
-    href: "/produtos",
-    action: "Ver produtos",
-    featured: false,
-  },
-  {
-    eyebrow: "Presença digital",
-    title: "Site institucional",
-    copy: "Prévia da experiência pública que receberá os conteúdos finais após as aprovações de marca e embalagem.",
-    status: "Em desenvolvimento",
-    href: "/site",
-    action: "Ver prévia do site",
+    href: "/site-preview",
+    action: "Ver prévia",
     featured: false,
   },
 ] as const;
 
 const roadmap = [
-  ["01", "Aprovar a família de rótulos", "Validar direção visual, hierarquia e aplicação nos dois volumes."],
-  ["02", "Finalizar embalagens e mockups", "Consolidar os arquivos definitivos e substituir as imagens conceituais."],
-  ["03", "Concluir documentação da marca", "Organizar regras de uso, aplicações e materiais de referência."],
-  ["04", "Publicar a presença definitiva", "Migrar a experiência para o domínio próprio da Vem Viver no momento adequado."],
+  ["01", "Consolidar a fonte única de verdade", "Centralizar logo, regras, decisões e materiais aprovados no Brand Lab e nesta área de apresentação."],
+  ["02", "Atualizar aplicações institucionais", "Substituir versões antigas da marca em apresentações, site, materiais comerciais e peças de projeto."],
+  ["03", "Validar a arquitetura do portfólio", "Ajustar linha, nomenclaturas, mensagens e aplicações conceituais antes de qualquer preparação de gráfica."],
+  ["04", "Abrir a fase de produção quando houver insumos", "Somente com embalagem, fabricante e fornecedor definidos entram faca, substrato, prova de cor e pré-impressão."],
 ] as const;
 
 export default function PresentationHubPage() {
@@ -70,22 +70,22 @@ export default function PresentationHubPage() {
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Marca · embalagens · presença digital</p>
+          <p className={styles.eyebrow}>Marca · sistema visual · presença institucional</p>
           <h1>Um único lugar para acompanhar a evolução da <em>Vem Viver.</em></h1>
           <p className={styles.lead}>
-            Este ambiente reúne os materiais em desenvolvimento para ciência, alinhamento e aprovação antes da publicação definitiva da marca.
+            Este ambiente passa a funcionar como referência oficial do projeto: o que já foi consolidado, o que permanece conceitual e o que ainda depende de decisões futuras.
           </p>
           <div className={styles.heroTags} aria-label="Status do ambiente">
             <span>Ambiente de projeto</span>
             <span>Não indexado</span>
-            <span>Atualizado por etapa</span>
+            <span>Fonte única de verdade</span>
           </div>
         </div>
         <aside className={styles.heroAside}>
-          <span className={styles.asideLabel}>Em foco agora</span>
-          <strong>Rótulos Vem Viver</strong>
-          <p>Revisão da família inicial para 1 L e 1,5 L.</p>
-          <Link href="/rotulos">Revisar apresentação <span aria-hidden="true">↗</span></Link>
+          <span className={styles.asideLabel}>Marco atual</span>
+          <strong>Identidade visual consolidada</strong>
+          <p>Brand Foundation v1.0 com logomarca master e regras de uso.</p>
+          <Link href="/brand-lab/identidade">Abrir Brand Foundation <span aria-hidden="true">↗</span></Link>
         </aside>
       </section>
 
@@ -113,29 +113,29 @@ export default function PresentationHubPage() {
 
       <section className={styles.approval} aria-labelledby="aprovacao">
         <div className={styles.approvalIntro}>
-          <p className={styles.sectionIndex}>02 · Aprovações</p>
-          <h2 id="aprovacao">O próximo avanço depende desta validação.</h2>
+          <p className={styles.sectionIndex}>02 · Marco de projeto</p>
+          <h2 id="aprovacao">A marca deixa de ser uma proposta e passa a ser uma referência.</h2>
           <p>
-            A prioridade atual é aprovar a direção dos rótulos para que mockups, materiais comerciais e presença digital avancem sobre uma base definitiva.
+            A logomarca aprovada e sua fundação visual passam a orientar todas as novas aplicações. Estudos anteriores continuam disponíveis apenas como histórico ou material conceitual, sem prevalecer sobre a master atual.
           </p>
         </div>
         <div className={styles.approvalPanel}>
           <div>
             <span>Status</span>
-            <strong>Aguardando aprovação</strong>
+            <strong>Brand Foundation v1.0 consolidada</strong>
           </div>
           <div>
-            <span>Material</span>
-            <strong>8 aplicações · 4 sabores · 2 volumes</strong>
+            <span>Fase atual</span>
+            <strong>Aplicações institucionais e organização do ecossistema</strong>
           </div>
-          <Link href="/rotulos">Abrir material de aprovação <span aria-hidden="true">↗</span></Link>
+          <Link href="/brand-lab/identidade">Consultar identidade oficial <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
       <section className={styles.roadmap} aria-labelledby="proximas-etapas">
         <div className={styles.sectionHeading}>
           <p>03 · Próximas etapas</p>
-          <h2 id="proximas-etapas">Da aprovação ao lançamento.</h2>
+          <h2 id="proximas-etapas">Da identidade consolidada à implantação.</h2>
         </div>
         <div className={styles.roadmapList}>
           {roadmap.map(([number, title, copy]) => (
@@ -153,7 +153,7 @@ export default function PresentationHubPage() {
       <footer className={styles.footer}>
         <BrandLogo />
         <p>
-          Ambiente temporário de projeto hospedado sob o domínio Empório Liasch. Na etapa definitiva, a experiência poderá ser associada ao domínio próprio da Vem Viver sem reconstrução do conteúdo.
+          Ambiente temporário de projeto hospedado sob o domínio Empório Liasch. A produção gráfica de rótulos será tratada como uma fase independente quando embalagem, fabricante e fornecedor estiverem definidos.
         </p>
       </footer>
     </main>
