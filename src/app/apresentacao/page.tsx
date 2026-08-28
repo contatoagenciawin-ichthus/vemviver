@@ -78,7 +78,7 @@ export default function PresentationHubPage() {
       </header>
 
       <section className={styles.hero}>
-        <div className={styles.heroCopy}>
+        <div>
           <p className={styles.eyebrow}>Marca · sistema visual · presença institucional</p>
           <h1>Um único lugar para acompanhar a evolução da <em>Vem Viver.</em></h1>
           <p className={styles.lead}>
@@ -105,7 +105,7 @@ export default function PresentationHubPage() {
         </div>
         <div className={styles.materialGrid}>
           {materials.map((item) => (
-            <article className={`${styles.materialCard} ${item.featured ? styles.featured : ""}`} key={item.title}>
+            <article className={item.featured ? `${styles.materialCard} ${styles.featured}` : styles.materialCard} key={item.title}>
               <div className={styles.cardTopline}>
                 <span>{item.eyebrow}</span>
                 <span className={styles.status}>{item.status}</span>
