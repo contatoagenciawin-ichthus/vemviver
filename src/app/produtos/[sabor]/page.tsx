@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Bottle } from "@/components/bottle";
+import { ProductMockup } from "@/components/product-mockup";
 import { PublicFooter } from "@/components/public-footer";
 import { PublicHeader } from "@/components/public-header";
 import { getProduct, packageSizes, products } from "@/data/products";
@@ -45,20 +45,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p>{product.intro}</p>
           <Link className="button" href="/onde-encontrar">Onde encontrar</Link>
         </div>
-        <div className="product-detail__visual">
+        <div className="product-detail__visual product-detail__visual--approved">
           <span className="product-detail__word" aria-hidden="true">{product.name}</span>
-          <div className="product-detail__bottles">
-            <Bottle
+          <div className="product-detail__bottles product-detail__bottles--approved">
+            <ProductMockup
               tone={product.tone}
-              label={product.name}
-              volume="1 L"
-              size="1l"
+              volume="1l"
+              priority
+              sizes="(max-width: 760px) 42vw, 280px"
             />
-            <Bottle
+            <ProductMockup
               tone={product.tone}
-              label={product.name}
-              volume="1,5 L"
-              size="1-5l"
+              volume="15l"
+              priority
+              sizes="(max-width: 760px) 46vw, 310px"
             />
           </div>
         </div>
@@ -82,22 +82,21 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="product-formats">
         <div className="product-formats__copy">
-          <p className="section-index">Formatos em estudo</p>
+          <p className="section-index">Formatos da linha</p>
           <h2>Escolha como<br />Vem Viver.</h2>
           <p>
-            Os formatos de 1 L e 1,5 L seguem como referência de portfólio enquanto
-            embalagem e especificações técnicas são confirmadas.
+            Cada sabor da linha está apresentado em 1 L e 1,5 L, mantendo a mesma
+            assinatura visual e a identidade da família Vem Viver.
           </p>
         </div>
         <div className="product-formats__grid">
           {packageSizes.map((format) => (
             <article key={format.volume}>
-              <div className="product-formats__bottle">
-                <Bottle
+              <div className="product-formats__bottle product-formats__bottle--approved">
+                <ProductMockup
                   tone={product.tone}
-                  label={product.name}
-                  volume={format.volume}
-                  size={format.size}
+                  volume={format.volume === "1,5 L" ? "15l" : "1l"}
+                  sizes="(max-width: 760px) 62vw, 280px"
                 />
               </div>
               <strong>{format.volume}</strong>
@@ -122,7 +121,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <dd>Condição 100% integral confirmada pelo fabricante e envasador Casa Granda.</dd>
           </div>
           <div>
-            <dt>Volumes em estudo</dt>
+            <dt>Volumes da linha</dt>
             <dd>1 L e 1,5 L</dd>
           </div>
           {product.technical ? (
