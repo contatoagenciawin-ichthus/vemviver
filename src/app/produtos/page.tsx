@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Bottle } from "@/components/bottle";
+import { ProductMockup } from "@/components/product-mockup";
 import { PublicFooter } from "@/components/public-footer";
 import { PublicHeader } from "@/components/public-header";
 import { packageSizes, products } from "@/data/products";
@@ -27,9 +27,13 @@ export default function ProductsPage() {
       <section className="products-catalog" aria-label="Linha de produtos Vem Viver">
         {products.map((product, index) => (
           <article className={`catalog-card catalog-card--${product.tone}`} key={product.slug}>
-            <div className="catalog-card__visual">
+            <div className="catalog-card__visual catalog-card__visual--approved">
               <span>0{index + 1}</span>
-              <Bottle tone={product.tone} label={product.name} />
+              <ProductMockup
+                tone={product.tone}
+                volume="1l"
+                sizes="(max-width: 760px) 74vw, (max-width: 1100px) 42vw, 360px"
+              />
             </div>
             <div className="catalog-card__copy">
               <p className="section-index">{product.accent}</p>
@@ -46,7 +50,7 @@ export default function ProductsPage() {
 
       <section className="formats-intro">
         <div>
-          <p className="section-index">Formatos em estudo</p>
+          <p className="section-index">Formatos da linha</p>
           <h2>Para a rotina.<br />Para compartilhar.</h2>
         </div>
         <div className="formats-intro__sizes">
