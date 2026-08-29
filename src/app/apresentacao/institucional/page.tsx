@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bottle } from "@/components/bottle";
+import Image from "next/image";
 import { BrandLogo } from "@/components/brand-logo";
 import styles from "./page.module.css";
 
@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const line = [
-  { tone: "tinto", name: "Uva Tinto", note: "Profundo e encorpado" },
-  { tone: "branco", name: "Uva Branco", note: "Leve e luminoso" },
-  { tone: "rose", name: "Uva Rosé", note: "Delicado e acolhedor" },
-  { tone: "laranja", name: "Laranja", note: "Familiar e vibrante" },
+  { name: "Uva Tinto", note: "Profundo e encorpado" },
+  { name: "Uva Branco", note: "Leve e luminoso" },
+  { name: "Uva Rosé", note: "Delicado e acolhedor" },
+  { name: "Laranja", note: "Familiar e vibrante" },
 ] as const;
 
 const principles = [
@@ -37,7 +37,7 @@ export default function InstitutionalPresentationPage() {
           <h1>Um novo ciclo para uma marca que sempre teve prazer em <em>servir.</em></h1>
         </div>
         <div className={styles.coverFooter}>
-          <span>Sucos integrais</span>
+          <span>Sucos 100% integrais</span>
           <span>Apresentação institucional do projeto</span>
         </div>
       </section>
@@ -96,26 +96,44 @@ export default function InstitutionalPresentationPage() {
         <div className={styles.sectionHeadingRow}>
           <div>
             <p>04 · Linha inicial</p>
-            <h2>Quatro sabores.<br />Uma só assinatura.</h2>
+            <h2>Quatro sabores.<br />Dois volumes.<br />Uma só assinatura.</h2>
           </div>
           <p>
-            Uvas formam o eixo inicial da proposta e a laranja amplia a presença na rotina. A arquitetura foi pensada para permitir leitura de família sem apagar a personalidade de cada sabor.
+            A linha atual reúne Uva Tinto, Uva Branco, Uva Rosé e Laranja, apresentados em 1 L e 1,5 L. Os mockups abaixo já refletem as garrafas, a logomarca e a direção de rótulo vigentes.
           </p>
         </div>
-        <div className={styles.bottleGrid}>
+
+        <div className={styles.approvedLineup}>
+          <Image
+            alt="Linha Vem Viver com os mockups atuais dos produtos"
+            height={1200}
+            priority
+            sizes="(max-width: 700px) 0px, 92vw"
+            src="/brand/mockups-atualizados/linha-horizontal-1.png"
+            width={1800}
+          />
+          <Image
+            alt="Linha Vem Viver com os mockups atuais em composição vertical"
+            className={styles.approvedLineupMobile}
+            height={1800}
+            sizes="(max-width: 700px) 92vw, 0px"
+            src="/brand/mockups-atualizados/linha-vertical-1.png"
+            width={1200}
+          />
+        </div>
+
+        <div className={styles.lineMeta}>
           {line.map((product, index) => (
-            <article key={product.tone}>
+            <article key={product.name}>
               <span>0{index + 1}</span>
-              <div className={styles.bottleWrap}>
-                <Bottle tone={product.tone} label={product.name} />
-              </div>
               <h3>{product.name}</h3>
               <p>{product.note}</p>
             </article>
           ))}
         </div>
+
         <p className={styles.lineNote}>
-          As embalagens mostradas nesta apresentação são estudos de arquitetura de marca. Formatos, textos técnicos, selos e acabamentos serão definidos na etapa específica de embalagem e produção.
+          Estes mockups são a referência visual vigente do projeto. O fechamento gráfico de produção — faca, substrato, perfil de cor, acabamentos e pré-impressão — permanece como etapa técnica posterior.
         </p>
       </section>
 
@@ -146,11 +164,11 @@ export default function InstitutionalPresentationPage() {
       <section className={styles.stage}>
         <div>
           <p className={styles.sectionIndex}>06 · Momento atual</p>
-          <h2>A base da marca está consolidada. Agora, o trabalho é transformar consistência em presença.</h2>
+          <h2>A base da marca e a representação atual da linha estão consolidadas.</h2>
         </div>
         <div className={styles.stageList}>
-          <div><span>Consolidado</span><strong>Logomarca e Brand Foundation v1.0</strong></div>
-          <div><span>Em evolução</span><strong>Aplicações institucionais, site e arquitetura do portfólio</strong></div>
+          <div><span>Consolidado</span><strong>Logomarca, Brand Foundation v1.0 e mockups atuais da linha</strong></div>
+          <div><span>Em evolução</span><strong>Aplicações institucionais, site e implantação da presença da marca</strong></div>
           <div><span>Etapa futura</span><strong>Embalagem técnica, pré-impressão e produção gráfica</strong></div>
         </div>
       </section>
@@ -158,7 +176,7 @@ export default function InstitutionalPresentationPage() {
       <footer className={styles.footer}>
         <div><BrandLogo light /></div>
         <blockquote>“O suco que temos prazer em servir.”</blockquote>
-        <p>Material institucional de apresentação do projeto Vem Viver. Não constitui arte final de embalagem ou material regulatório.</p>
+        <p>Material institucional de apresentação do projeto Vem Viver. Os mockups representam o estágio visual vigente; não constituem arquivos finais de pré-impressão.</p>
       </footer>
     </main>
   );
