@@ -22,7 +22,7 @@ const materials = [
   {
     eyebrow: "Material institucional",
     title: "Apresentação da marca",
-    copy: "Narrativa atualizada para apresentar a origem, o novo ciclo, a identidade e a arquitetura inicial Vem Viver a parceiros e interlocutores do projeto.",
+    copy: "Narrativa atualizada para apresentar a origem, o novo ciclo, a identidade e a linha atual Vem Viver a parceiros e interlocutores do projeto.",
     status: "Atualizada",
     href: "/apresentacao/institucional",
     action: "Abrir apresentação",
@@ -31,25 +31,25 @@ const materials = [
   {
     eyebrow: "Fundação",
     title: "Brand Lab",
-    copy: "Ambiente vivo com essência, princípios, sistema visual, linha inicial e decisões que orientam a evolução da Vem Viver.",
+    copy: "Ambiente vivo com essência, princípios, sistema visual, linha atual e decisões que orientam a implantação da Vem Viver.",
     status: "Em uso",
     href: "/brand-lab",
     action: "Abrir Brand Lab",
     featured: false,
   },
   {
-    eyebrow: "Aplicação conceitual",
-    title: "Estudos de rótulos",
-    copy: "Família visual em estudo para os produtos iniciais. Esta área serve para direção e comparação, não como arquivo de produção gráfica.",
-    status: "Conceitual",
+    eyebrow: "Produto · linha atual",
+    title: "Mockups da linha",
+    copy: "Os oito produtos — quatro sabores em 1 L e 1,5 L — apresentados com as garrafas, logomarca e direção de rótulo vigentes.",
+    status: "Vigente",
     href: "/brand-lab/rotulos",
-    action: "Revisar estudos",
+    action: "Ver mockups atuais",
     featured: false,
   },
   {
     eyebrow: "Presença institucional",
     title: "Site e ecossistema",
-    copy: "Prévia da experiência pública que receberá conteúdos e aplicações finais conforme as decisões de marca forem consolidadas.",
+    copy: "Prévia da experiência pública já alimentada pela identidade e pelos mockups atuais da linha.",
     status: "Em evolução",
     href: "/site-preview",
     action: "Ver prévia",
@@ -58,10 +58,10 @@ const materials = [
 ] as const;
 
 const roadmap = [
-  ["01", "Usar a apresentação institucional como material vigente", "A narrativa para parceiros passa a usar exclusivamente a identidade consolidada e o estágio real do projeto."],
-  ["02", "Completar as aplicações institucionais", "Substituir versões antigas da marca no site, materiais comerciais e demais pontos de contato em evolução."],
-  ["03", "Validar a arquitetura do portfólio", "Ajustar linha, nomenclaturas, mensagens e aplicações conceituais antes de qualquer preparação de gráfica."],
-  ["04", "Abrir a fase de produção quando houver insumos", "Somente com embalagem, fabricante e fornecedor definidos entram faca, substrato, prova de cor e pré-impressão."],
+  ["01", "Usar a apresentação institucional como material vigente", "A narrativa para parceiros passa a usar exclusivamente a identidade consolidada e os mockups atuais da linha."],
+  ["02", "Completar a implantação institucional", "Revisar site, materiais comerciais e demais pontos de contato para que utilizem somente os ativos vigentes."],
+  ["03", "Fechar o handoff da marca", "Organizar o pacote definitivo de identidade e aplicações para entrega ao Liasch, separando arquivos oficiais de material histórico."],
+  ["04", "Abrir a fase gráfica em etapa própria", "Faca, substrato, perfil de cor, acabamentos e pré-impressão serão tratados quando a produção gráfica for efetivamente iniciada."],
 ] as const;
 
 export default function PresentationHubPage() {
@@ -82,7 +82,7 @@ export default function PresentationHubPage() {
           <p className={styles.eyebrow}>Marca · sistema visual · presença institucional</p>
           <h1>Um único lugar para acompanhar a evolução da <em>Vem Viver.</em></h1>
           <p className={styles.lead}>
-            Este ambiente passa a funcionar como referência oficial do projeto: o que já foi consolidado, o que permanece conceitual e o que ainda depende de decisões futuras.
+            Este ambiente funciona como referência oficial do projeto: identidade consolidada, representação atual da linha, materiais institucionais e próximos passos de implantação.
           </p>
           <div className={styles.heroTags} aria-label="Status do ambiente">
             <span>Ambiente de projeto</span>
@@ -92,9 +92,9 @@ export default function PresentationHubPage() {
         </div>
         <aside className={styles.heroAside}>
           <span className={styles.asideLabel}>Marco atual</span>
-          <strong>Identidade visual consolidada</strong>
-          <p>Brand Foundation v1.0 com logomarca master e regras de uso.</p>
-          <Link href="/brand-lab/identidade">Abrir Brand Foundation <span aria-hidden="true">↗</span></Link>
+          <strong>Marca e linha visual consolidadas</strong>
+          <p>Brand Foundation v1.0 e oito mockups atuais dos produtos.</p>
+          <Link href="/brand-lab/rotulos">Ver linha atual <span aria-hidden="true">↗</span></Link>
         </aside>
       </section>
 
@@ -123,21 +123,21 @@ export default function PresentationHubPage() {
       <section className={styles.approval} aria-labelledby="aprovacao">
         <div className={styles.approvalIntro}>
           <p className={styles.sectionIndex}>02 · Marco de projeto</p>
-          <h2 id="aprovacao">A marca deixa de ser uma proposta e passa a ser uma referência.</h2>
+          <h2 id="aprovacao">A marca já tem uma representação atual coerente do produto.</h2>
           <p>
-            A logomarca aprovada e sua fundação visual passam a orientar todas as novas aplicações. Estudos anteriores continuam disponíveis apenas como histórico ou material conceitual, sem prevalecer sobre a master atual.
+            A logomarca aprovada, a Brand Foundation e os novos mockups passam a orientar todas as aplicações principais. Estudos anteriores permanecem apenas como memória de processo e não devem competir com os ativos vigentes.
           </p>
         </div>
         <div className={styles.approvalPanel}>
           <div>
             <span>Status</span>
-            <strong>Brand Foundation v1.0 consolidada</strong>
+            <strong>Identidade + mockups atuais consolidados</strong>
           </div>
           <div>
             <span>Fase atual</span>
-            <strong>Aplicações institucionais e organização do ecossistema</strong>
+            <strong>Implantação institucional e fechamento do handoff</strong>
           </div>
-          <Link href="/brand-lab/identidade">Consultar identidade oficial <span aria-hidden="true">↗</span></Link>
+          <Link href="/apresentacao/institucional">Abrir apresentação vigente <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
@@ -162,7 +162,7 @@ export default function PresentationHubPage() {
       <footer className={styles.footer}>
         <BrandLogo />
         <p>
-          Ambiente temporário de projeto hospedado sob o domínio Empório Liasch. A produção gráfica de rótulos será tratada como uma fase independente quando embalagem, fabricante e fornecedor estiverem definidos.
+          Ambiente temporário de projeto hospedado sob o domínio Empório Liasch. A Casa Granda está confirmada como fabricante/envasador; o fechamento de pré-impressão e produção gráfica permanece como etapa técnica independente.
         </p>
       </footer>
     </main>
