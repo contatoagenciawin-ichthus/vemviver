@@ -151,13 +151,40 @@
 .sectionHeadingRow { display: grid; grid-template-columns: 1fr .55fr; gap: 80px; align-items: end; }
 .sectionHeadingRow h2 { font-size: clamp(48px, 6vw, 84px); line-height: .94; }
 .sectionHeadingRow > p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
-.bottleGrid { margin-top: 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.bottleGrid article { padding: 24px 18px 28px; background: rgba(255,255,255,.44); border-top: 2px solid rgba(57,69,36,.32); }
-.bottleGrid article > span { font-size: 10px; font-weight: 700; letter-spacing: .1em; }
-.bottleWrap { height: 470px; display: flex; align-items: end; justify-content: center; overflow: hidden; }
-.bottleWrap :global(.bottle) { transform: scale(.68); transform-origin: bottom center; }
-.bottleGrid h3 { margin: 16px 0 5px; font-family: var(--font-display), Georgia, serif; font-size: 28px; font-weight: 600; }
-.bottleGrid p { margin: 0; color: var(--muted); font-size: 12px; }
+
+.approvedLineup {
+  position: relative;
+  margin-top: 70px;
+  overflow: hidden;
+  border: 1px solid rgba(57,69,36,.14);
+  background: #fffdfa;
+}
+
+.approvedLineup > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.approvedLineupMobile { display: none !important; }
+
+.lineMeta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+  border-top: 1px solid rgba(57,69,36,.22);
+}
+
+.lineMeta article {
+  padding: 22px 24px 26px 0;
+  border-right: 1px solid rgba(57,69,36,.16);
+}
+
+.lineMeta article + article { padding-left: 24px; }
+.lineMeta article:last-child { border-right: 0; }
+.lineMeta span { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+.lineMeta h3 { margin: 22px 0 4px; font-family: var(--font-display), Georgia, serif; font-size: 25px; font-weight: 600; }
+.lineMeta p { margin: 0; color: var(--muted); font-size: 12px; }
 .lineNote { max-width: 770px; margin: 42px 0 0 auto; color: var(--muted); font-size: 11px; line-height: 1.65; }
 
 .system { background: #fffdfa; display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; }
@@ -194,7 +221,9 @@
   .system,
   .stage { grid-template-columns: 1fr; }
   .sectionHeadingRow { grid-template-columns: 1fr; gap: 30px; }
-  .bottleGrid { grid-template-columns: repeat(2, 1fr); }
+  .lineMeta { grid-template-columns: repeat(2, 1fr); }
+  .lineMeta article:nth-child(2) { border-right: 0; }
+  .lineMeta article:nth-child(3) { padding-left: 0; }
   .palette { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -218,9 +247,12 @@
   .principles article + article { min-height: auto; padding: 30px 0 38px; border-right: 0; border-bottom: 1px solid rgba(57,69,36,.16); }
   .principles h3 { margin-top: 34px; }
   .identityLogo { min-height: 260px; margin-block: 60px 48px; padding: 34px; }
-  .bottleGrid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .bottleWrap { height: 360px; }
-  .bottleWrap :global(.bottle) { transform: scale(.52); }
+  .approvedLineup > img:first-child { display: none; }
+  .approvedLineupMobile { display: block !important; }
+  .lineMeta { grid-template-columns: 1fr 1fr; }
+  .lineMeta article { padding: 18px 14px 20px 0; }
+  .lineMeta article + article { padding-left: 14px; }
+  .lineMeta article:nth-child(3) { padding-left: 0; }
   .systemGrid article { grid-template-columns: 1fr; gap: 10px; }
   .systemGrid p { grid-column: 1; }
   .stageList div { grid-template-columns: 1fr; gap: 8px; }
