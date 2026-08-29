@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Bottle } from "@/components/bottle";
+import { ProductMockup } from "@/components/product-mockup";
 import { PublicFooter } from "@/components/public-footer";
 import { PublicHeader } from "@/components/public-header";
 import { products } from "@/data/products";
@@ -23,12 +24,26 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="public-hero__visual" aria-label="Sucos 100% integrais Vem Viver">
-          <span className="public-hero__stamp">Sucos 100% integrais</span>
-          <div className="public-hero__halo" />
-          <Bottle tone="tinto" label="Uva Tinto" />
-          <Bottle tone="branco" label="Uva Branco" />
-          <Bottle tone="rose" label="Uva Rosé" />
+        <div className="public-hero__visual public-hero__visual--approved" aria-label="Linha Vem Viver em mockups aprovados">
+          <span className="public-hero__stamp">Linha Vem Viver</span>
+          <Image
+            alt="Linha completa Vem Viver em composição ambientalizada"
+            className="brand-lineup-image brand-lineup-image--horizontal"
+            height={1200}
+            priority
+            sizes="(max-width: 900px) 0px, 58vw"
+            src="/brand/mockups-atualizados/linha-horizontal-1.png"
+            width={1800}
+          />
+          <Image
+            alt="Linha completa Vem Viver em composição ambientalizada vertical"
+            className="brand-lineup-image brand-lineup-image--vertical"
+            height={1800}
+            priority
+            sizes="(max-width: 900px) 92vw, 0px"
+            src="/brand/mockups-atualizados/linha-vertical-1.png"
+            width={1200}
+          />
         </div>
       </section>
 
@@ -60,8 +75,12 @@ export default function Home() {
               key={product.tone}
             >
               <span className="product-tile__number">0{index + 1}</span>
-              <div className="product-tile__bottle">
-                <Bottle tone={product.tone} label={product.name} />
+              <div className="product-tile__bottle product-tile__bottle--approved">
+                <ProductMockup
+                  tone={product.tone}
+                  volume="1l"
+                  sizes="(max-width: 700px) 62vw, (max-width: 1100px) 34vw, 250px"
+                />
               </div>
               <div className="product-tile__copy">
                 <h3>{product.name}</h3>
