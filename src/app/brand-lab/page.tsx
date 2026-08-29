@@ -1,4 +1,4 @@
-import { Bottle } from "@/components/bottle";
+import Image from "next/image";
 import { BrandLogo } from "@/components/brand-logo";
 
 const flavors = [
@@ -41,7 +41,7 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero__copy">
-          <p className="eyebrow">Sucos integrais · Desde 1992</p>
+          <p className="eyebrow">Sucos 100% integrais · Desde 1992</p>
           <h1>O prazer de servir <em>boas escolhas.</em></h1>
           <p className="hero__lead">
             Uma marca construída com critério para ocupar a mesa, a rotina e os bons
@@ -52,11 +52,25 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="hero__visual" aria-label="Linha inicial Vem Viver">
-          <div className="hero__halo" />
-          <Bottle tone="tinto" label="Uva Tinto" />
-          <Bottle tone="branco" label="Uva Branco" />
-          <Bottle tone="rose" label="Uva Rosé" />
+        <div className="hero__visual hero__visual--approved" aria-label="Linha atual Vem Viver">
+          <Image
+            alt="Linha Vem Viver em composição ambientalizada"
+            className="brand-lab-lineup-image brand-lab-lineup-image--horizontal"
+            height={1200}
+            priority
+            sizes="(max-width: 900px) 0px, 54vw"
+            src="/brand/mockups-atualizados/linha-horizontal-1.png"
+            width={1800}
+          />
+          <Image
+            alt="Linha Vem Viver em composição ambientalizada vertical"
+            className="brand-lab-lineup-image brand-lab-lineup-image--vertical"
+            height={1800}
+            priority
+            sizes="(max-width: 900px) 92vw, 0px"
+            src="/brand/mockups-atualizados/linha-vertical-1.png"
+            width={1200}
+          />
         </div>
       </section>
 
@@ -140,11 +154,11 @@ export default function Home() {
         <div className="lineup__heading">
           <div>
             <p className="section-index">03 · Linha inicial</p>
-            <h2>Quatro sabores.<br />Uma só assinatura.</h2>
+            <h2>Quatro sabores.<br />Dois volumes.<br />Uma só assinatura.</h2>
           </div>
           <p>
-            A cor orienta a escolha sem fragmentar a marca. A estrutura permanece; muda
-            apenas o necessário para reconhecer cada produto.
+            A cor orienta a escolha sem fragmentar a marca. Os mockups atuais da linha
+            refletem a garrafa, a assinatura e a direção de rótulo vigentes.
           </p>
         </div>
 
