@@ -1,0 +1,419 @@
+.page {
+  min-height: 100vh;
+  background: #f6f0e5;
+  color: #394524;
+}
+
+.header {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid rgba(57, 69, 36, 0.18);
+}
+
+.logo {
+  display: inline-flex;
+  width: 148px;
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.headerMeta span {
+  opacity: 0.6;
+}
+
+.headerMeta strong {
+  padding-left: 14px;
+  border-left: 1px solid rgba(57, 69, 36, 0.24);
+  font-weight: 700;
+}
+
+.hero {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 92px 0 84px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: 72px;
+  align-items: end;
+}
+
+.eyebrow,
+.sectionIndex,
+.sectionHeading > p {
+  margin: 0 0 20px;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero h1,
+.sectionHeading h2,
+.approvalIntro h2 {
+  margin: 0;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.hero h1 {
+  max-width: 880px;
+  font-size: clamp(46px, 6.4vw, 88px);
+  line-height: 0.98;
+}
+
+.hero h1 em {
+  font-weight: 400;
+  color: #541d33;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 30px 0 0;
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.55;
+  color: rgba(57, 69, 36, 0.76);
+}
+
+.heroTags {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.heroTags span,
+.status {
+  border: 1px solid rgba(57, 69, 36, 0.2);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.heroAside {
+  background: #394524;
+  color: #f6f0e5;
+  padding: 32px;
+  border-radius: 2px;
+}
+
+.asideLabel {
+  display: block;
+  margin-bottom: 42px;
+  font-size: 11px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.heroAside strong {
+  display: block;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1.08;
+  font-weight: 400;
+}
+
+.heroAside p {
+  margin: 14px 0 28px;
+  line-height: 1.55;
+  color: rgba(246, 240, 229, 0.72);
+}
+
+.heroAside a,
+.materialCard a,
+.approvalPanel a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.heroAside a {
+  color: #f6f0e5;
+}
+
+.materials,
+.roadmap {
+  padding: 90px max(24px, calc((100vw - 1180px) / 2));
+}
+
+.materials {
+  background: #fffdfa;
+  border-top: 1px solid rgba(57, 69, 36, 0.12);
+  border-bottom: 1px solid rgba(57, 69, 36, 0.12);
+}
+
+.sectionHeading {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+  margin-bottom: 46px;
+}
+
+.sectionHeading h2,
+.approvalIntro h2 {
+  max-width: 760px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.02;
+}
+
+.materialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.materialCard {
+  min-height: 310px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(57, 69, 36, 0.16);
+  background: #f6f0e5;
+}
+
+.materialCard.featured {
+  background: #394524;
+  color: #f6f0e5;
+}
+
+.cardTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.featured .status {
+  border-color: rgba(246, 240, 229, 0.3);
+}
+
+.materialCard h3 {
+  margin: 46px 0 14px;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: clamp(31px, 3vw, 42px);
+  line-height: 1.06;
+  font-weight: 400;
+}
+
+.materialCard p {
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(57, 69, 36, 0.72);
+}
+
+.featured p {
+  color: rgba(246, 240, 229, 0.72);
+}
+
+.materialCard a {
+  margin-top: 34px;
+  color: currentColor;
+}
+
+.approval {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.65fr);
+  gap: 76px;
+  align-items: start;
+}
+
+.approvalIntro > p:last-child {
+  max-width: 680px;
+  margin: 24px 0 0;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(57, 69, 36, 0.72);
+}
+
+.approvalPanel {
+  border-top: 2px solid #394524;
+  padding-top: 6px;
+}
+
+.approvalPanel > div {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(57, 69, 36, 0.16);
+}
+
+.approvalPanel span {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.approvalPanel strong {
+  font-size: 15px;
+}
+
+.approvalPanel a {
+  margin-top: 28px;
+  color: #394524;
+}
+
+.roadmap {
+  background: #e2e6d9;
+}
+
+.roadmapList {
+  border-top: 1px solid rgba(57, 69, 36, 0.24);
+}
+
+.roadmapList article {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(57, 69, 36, 0.24);
+}
+
+.roadmapList article > span {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.roadmapList h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.roadmapList p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(57, 69, 36, 0.7);
+}
+
+.footer {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  min-height: 180px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.footer p {
+  max-width: 760px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(57, 69, 36, 0.6);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .approval {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .sectionHeading {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .materialGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .header,
+  .hero,
+  .approval,
+  .footer {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .header {
+    min-height: 82px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .headerMeta span {
+    display: none;
+  }
+
+  .headerMeta strong {
+    padding-left: 0;
+    border: 0;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 62px 0 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+
+  .materials,
+  .roadmap {
+    padding: 68px 16px;
+  }
+
+  .materialCard {
+    min-height: 280px;
+    padding: 24px;
+  }
+
+  .cardTopline {
+    align-items: flex-start;
+  }
+
+  .approval {
+    padding: 72px 0;
+  }
+
+  .approvalPanel > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .roadmapList article {
+    grid-template-columns: 54px 1fr;
+  }
+
+  .footer {
+    min-height: 230px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 44px 0;
+  }
+}

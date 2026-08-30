@@ -1,0 +1,168 @@
+:root {
+  /* Brand Foundation v1.0 — institutional tokens */
+  --cream-50: #fffdf8;
+  --cream-100: #f6f0e5;
+  --cream-200: #eadfcd;
+  --forest-900: #394524;
+  --forest-800: #46542d;
+  --olive-700: #5b6637;
+  --olive-500: #7e8749;
+  --ink: #22251f;
+  --muted: #6c7064;
+  --wine: #541d33;
+  --grape: #2f203b;
+  --gold: #b89c4a;
+  --rose: #b7737d;
+  --orange: #ca7b2d;
+  --white-grape: #b89c4a;
+  --line: rgba(57, 69, 36, 0.16);
+}
+
+/* Approved product mockups — single visual source of truth */
+.product-mockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.public-hero__visual--approved {
+  min-height: 620px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #f4f0e8;
+}
+
+.public-hero__visual--approved .public-hero__stamp {
+  z-index: 3;
+}
+
+.brand-lineup-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-lineup-image--vertical {
+  display: none;
+}
+
+.product-tile__bottle--approved {
+  height: 390px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-tile__bottle--approved .product-mockup {
+  max-width: 255px;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+.catalog-card__visual--approved {
+  overflow: hidden;
+}
+
+.catalog-card__visual--approved .product-mockup {
+  width: min(100%, 390px);
+  margin: 0 auto;
+}
+
+.product-detail__visual--approved {
+  overflow: hidden;
+}
+
+.product-detail__bottles--approved {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 30px);
+}
+
+.product-detail__bottles--approved .product-mockup {
+  width: min(42%, 310px);
+}
+
+.product-detail__bottles--approved .product-mockup:first-child {
+  width: min(38%, 280px);
+}
+
+.product-formats__bottle--approved {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-formats__bottle--approved .product-mockup {
+  width: min(100%, 280px);
+  margin: 0 auto;
+}
+
+.hero__visual--approved {
+  min-height: 640px;
+  padding: 0;
+  align-items: stretch;
+  border-radius: 22px;
+  background: #f4f0e8;
+}
+
+.brand-lab-lineup-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-lab-lineup-image--vertical {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .public-hero__visual--approved,
+  .hero__visual--approved {
+    min-height: 560px;
+  }
+
+  .brand-lineup-image--horizontal,
+  .brand-lab-lineup-image--horizontal {
+    display: none;
+  }
+
+  .brand-lineup-image--vertical,
+  .brand-lab-lineup-image--vertical {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .public-hero__visual--approved,
+  .hero__visual--approved {
+    min-height: 500px;
+  }
+
+  .product-tile__bottle--approved {
+    height: 340px;
+  }
+
+  .product-tile__bottle--approved .product-mockup {
+    max-height: 330px;
+  }
+
+  .product-detail__bottles--approved {
+    gap: 4px;
+  }
+
+  .product-detail__bottles--approved .product-mockup,
+  .product-detail__bottles--approved .product-mockup:first-child {
+    width: 47%;
+  }
+}
