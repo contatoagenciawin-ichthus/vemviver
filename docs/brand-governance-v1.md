@@ -1,7 +1,7 @@
 # Vem Viver — Brand Governance v1.0
 
 Data de referência inicial: 28/08/2026  
-Atualização de implantação: 29/08/2026
+Atualização de implantação: 30/08/2026
 
 Este documento define a fonte única de verdade para a identidade visual e para a representação atual da linha Vem Viver nesta fase do projeto. Ele não substitui especificações futuras de pré-impressão.
 
@@ -41,6 +41,7 @@ As imagens dessa pasta substituem todas as garrafas sintéticas, ilustrações d
 - quatro sabores em dois volumes: oito produtos
 - mockups vigentes dos oito produtos
 - composições horizontal e vertical da linha para uso institucional
+- handoff institucional v1.0 em `/apresentacao/handoff`
 
 ### Em implantação
 
@@ -48,7 +49,7 @@ As imagens dessa pasta substituem todas as garrafas sintéticas, ilustrações d
 - Brand Lab e hub do projeto
 - site institucional e páginas de produto
 - materiais comerciais e demais pontos de contato da marca
-- pacote definitivo de handoff ao Liasch
+- ecossistema de lançamento e relacionamento com parceiros
 
 ### Fora desta fase
 
@@ -70,8 +71,9 @@ Os itens abaixo pertencem à futura etapa de fechamento gráfico e pré-impress�
 1. Master vetorial atual da logomarca
 2. Brand Foundation v1.0
 3. Mockups em `public/brand/mockups-atualizados/`
-4. Brand Lab, apresentação institucional e páginas atualizadas
-5. Materiais históricos
+4. Handoff institucional v1.0
+5. Brand Lab, apresentação institucional e páginas atualizadas
+6. Materiais históricos
 
 Em caso de divergência, prevalece sempre o item de nível mais alto.
 
@@ -96,13 +98,15 @@ Quando algum material anterior for exibido internamente, deve ser classificado c
 ## 7. Rotas oficiais do projeto
 
 - `/apresentacao` — hub do projeto
+- `/apresentacao/handoff` — handoff institucional v1.0 e pacote de ativos vigentes
+- `/entrega` — atalho para o handoff institucional
 - `/apresentacao/institucional` — apresentação vigente para parceiros/interlocutores
 - `/brand-lab` — sistema visual e fundamentos
 - `/brand-lab/identidade` — identidade consolidada
 - `/brand-lab/rotulos` — mockups vigentes dos oito produtos
 - `/site-preview` — presença institucional em evolução
 
-No domínio de apresentação existem atalhos equivalentes: `/institucional`, `/identidade`, `/rotulos`, `/marca` e `/site`.
+No domínio de apresentação permanecem os atalhos já existentes `/institucional`, `/identidade`, `/rotulos`, `/marca` e `/site`; `/entrega` passa a ser o atalho principal para o pacote de handoff.
 
 ## 8. Critério para abrir a fase gráfica
 
