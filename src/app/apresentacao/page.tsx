@@ -11,13 +11,22 @@ export const metadata: Metadata = {
 
 const materials = [
   {
+    eyebrow: "Entrega institucional · v1.0",
+    title: "Handoff da marca",
+    copy: "Pacote consolidado para compartilhamento com Liasch, parceiros e interlocutores: identidade oficial, ativos de marca, mockups vigentes, governança e limites da futura etapa gráfica.",
+    status: "Pronto",
+    href: "/apresentacao/handoff",
+    action: "Abrir handoff",
+    featured: true,
+  },
+  {
     eyebrow: "Identidade · v1.0",
     title: "Brand Foundation",
     copy: "Logomarca aprovada, master vetorial, paleta institucional, tipografia de apoio e regras básicas de governança da marca.",
     status: "Consolidada",
     href: "/brand-lab/identidade",
     action: "Abrir identidade",
-    featured: true,
+    featured: false,
   },
   {
     eyebrow: "Material institucional",
@@ -58,9 +67,9 @@ const materials = [
 ] as const;
 
 const roadmap = [
-  ["01", "Usar a apresentação institucional como material vigente", "A narrativa para parceiros passa a usar exclusivamente a identidade consolidada e os mockups atuais da linha."],
-  ["02", "Completar a implantação institucional", "Revisar site, materiais comerciais e demais pontos de contato para que utilizem somente os ativos vigentes."],
-  ["03", "Fechar o handoff da marca", "Organizar o pacote definitivo de identidade e aplicações para entrega ao Liasch, separando arquivos oficiais de material histórico."],
+  ["01", "Compartilhar o handoff institucional", "O pacote v1.0 passa a ser a porta de entrada para Liasch e demais interlocutores consultarem o estágio consolidado da marca."],
+  ["02", "Concluir a implantação institucional", "Revisar site, materiais comerciais e demais pontos de contato para que utilizem somente os ativos vigentes."],
+  ["03", "Preparar o ecossistema de lançamento", "Organizar presença digital, materiais para parceiros e comunicação comercial a partir da identidade e da linha já consolidadas."],
   ["04", "Abrir a fase gráfica em etapa própria", "Faca, substrato, perfil de cor, acabamentos e pré-impressão serão tratados quando a produção gráfica for efetivamente iniciada."],
 ] as const;
 
@@ -92,9 +101,9 @@ export default function PresentationHubPage() {
         </div>
         <aside className={styles.heroAside}>
           <span className={styles.asideLabel}>Marco atual</span>
-          <strong>Marca e linha visual consolidadas</strong>
-          <p>Brand Foundation v1.0 e oito mockups atuais dos produtos.</p>
-          <Link href="/brand-lab/rotulos">Ver linha atual <span aria-hidden="true">↗</span></Link>
+          <strong>Handoff institucional v1.0 pronto</strong>
+          <p>Identidade, linha visual vigente, ativos oficiais e governança organizados em uma única entrega.</p>
+          <Link href="/apresentacao/handoff">Abrir handoff <span aria-hidden="true">↗</span></Link>
         </aside>
       </section>
 
@@ -123,21 +132,21 @@ export default function PresentationHubPage() {
       <section className={styles.approval} aria-labelledby="aprovacao">
         <div className={styles.approvalIntro}>
           <p className={styles.sectionIndex}>02 · Marco de projeto</p>
-          <h2 id="aprovacao">A marca já tem uma representação atual coerente do produto.</h2>
+          <h2 id="aprovacao">A marca já tem uma base institucional organizada para avançar.</h2>
           <p>
-            A logomarca aprovada, a Brand Foundation e os novos mockups passam a orientar todas as aplicações principais. Estudos anteriores permanecem apenas como memória de processo e não devem competir com os ativos vigentes.
+            A logomarca aprovada, a Brand Foundation e os novos mockups orientam todas as aplicações principais. O handoff v1.0 reúne essa base em uma entrega clara, enquanto estudos anteriores permanecem apenas como memória de processo.
           </p>
         </div>
         <div className={styles.approvalPanel}>
           <div>
             <span>Status</span>
-            <strong>Identidade + mockups atuais consolidados</strong>
+            <strong>Handoff institucional pronto</strong>
           </div>
           <div>
             <span>Fase atual</span>
-            <strong>Implantação institucional e fechamento do handoff</strong>
+            <strong>Implantação da marca e preparação do ecossistema de lançamento</strong>
           </div>
-          <Link href="/apresentacao/institucional">Abrir apresentação vigente <span aria-hidden="true">↗</span></Link>
+          <Link href="/apresentacao/handoff">Abrir entrega v1.0 <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
